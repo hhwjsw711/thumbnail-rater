@@ -12,20 +12,19 @@ export default function Home() {
 
   return (
     <main className="">
-      {isSignedIn ? <SignOutButton /> : <SignInButton />}
-
       {isSignedIn && (
-        <form onSubmit={async (e) => {
-          e.preventDefault();
-          const form = e.target as HTMLFormElement
-          const formData = new FormData(form);
-          const title = formData.get("title") as string;
-          // TODO: pass to our mutation
-          await createThumbnail({
-            title,
-          })
-          form.reset();
-        }}>
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const form = e.target as HTMLFormElement;
+            const formData = new FormData(form);
+            const title = formData.get("title") as string;
+            await createThumbnail({
+              title,
+            });
+            form.reset();
+          }}
+        >
           <label>Title</label>
           <input name="title" className="text-black"></input>
           <button>Create</button>

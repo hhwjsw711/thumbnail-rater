@@ -3,26 +3,11 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { ModeToggle } from "./mode-toggle"
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { useAction, useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
-import { useRouter } from "next/navigation";
+import { useIsSubscribed } from "@/hooks/useIsSubscribed";
+import { UpgradeButton } from "@/components/upgrade-button";
 
 export function Header() {
-
-    const pay = useAction(api.stripe.pay);
-    const router = useRouter();
-    const user = useQuery(api.users.getUser);
-
-    async function handleUpgradeClick() {
-        const url = await pay();
-        router.push(url);
-    }
-
-    const isSubscriped = user && (user.endsOn ?? 0) > Date.now();
-
-    console.log(user?.endsOn);
-    console.log(Date.now());
+    const isSubscriped = useIsSubscribed();
 
     return (
         <div className="border-b">
@@ -44,7 +29,7 @@ export function Header() {
                 <div className="flex gap-4 items-center">
                     <SignedIn>
                         {!isSubscriped && (
-                            <Button onClick={handleUpgradeClick}>Upgrade</Button>
+                            <UpgradeButton />
                         )}
                         <UserButton />
                     </SignedIn>

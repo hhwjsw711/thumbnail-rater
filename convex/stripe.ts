@@ -12,7 +12,7 @@ type Metadata = {
 export const pay = action({
   args: {},
   handler: async (ctx) => {
-    const user = await ctx.auth.getUserIdentity()
+    const user = await ctx.auth.getUserIdentity();
 
     if (!user) {
       throw new Error("You must be logged in to subscribe");

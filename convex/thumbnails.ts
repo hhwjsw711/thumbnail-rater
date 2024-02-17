@@ -2,6 +2,7 @@
 import { v } from "convex/values"
 import { mutation, query } from "./_generated/server"
 import { paginationOptsValidator } from "convex/server";
+import { isUserSubscribed } from "./users";
 
 export const createThumbnail = mutation({
     args: {
@@ -16,6 +17,13 @@ export const createThumbnail = mutation({
         if (!user) {
             throw new Error("You must be logged in to create a thumbnail");
         }
+
+        const isSubscribed = await isUserSubscribed(ctx);
+
+        if (!isSubscribed) {
+            throw new Error("You must be subscribed to create a thumbnail");
+        }
+        // CHECK IF THEY ARE SUBSCRIBED
 
         return await ctx.db.insert('thumbnails', {
             title: args.title,

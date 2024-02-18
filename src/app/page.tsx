@@ -17,7 +17,7 @@ export default function Home() {
             </Button>
           </div>
           <div className="col-span-5">
-            <Image src="/hero.png" alt="mockup" width="600" height="400"/>
+            <Image src="/hero.jpeg" alt="mockup" width="600" height="400"/>
           </div>
         </div>
       </section>

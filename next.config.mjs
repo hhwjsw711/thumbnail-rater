@@ -6,7 +6,7 @@ const nextConfig = {
                 hostname: "necessary-cod-361.convex.cloud",
             },
             {
-                hostname: "/brave-sheep-556.convex.cloud",
+                hostname: "brave-sheep-556.convex.cloud",
             },
         ],
     },

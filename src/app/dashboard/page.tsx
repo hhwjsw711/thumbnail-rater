@@ -18,7 +18,7 @@ export default function DashboardPage() {
 
     return (
         <div className="">
-            <h1 className="text-center text-4xl font-bold mb-12">
+            <h1 className="text-center text-4xl font-bold mb-12 mt-8">
                 Your Thumbnail Tests
             </h1>
 

@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { Header } from "./header";
 import { Toaster } from "@/components/ui/toaster";
 import { Footer } from "./footer";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,18 +16,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale }
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const messages = useMessages();
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>
-          <Header />
-          <div className="container">{children}</div>
-          <Footer />
-          <Toaster />
-        </Providers >
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers>
+            <Header />
+            <div className="container">{children}</div>
+            <Footer />
+            <Toaster />
+          </Providers >
+        </NextIntlClientProvider>
       </body>
     </html>
   );

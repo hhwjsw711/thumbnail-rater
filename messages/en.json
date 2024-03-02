@@ -1,0 +1,57 @@
+{
+  "HomePage": {
+    "title": "The easiest way to get feedback on your thumbnails",
+    "description": "Upload your two thumbnails and send links to your friends to help you hone in your best design skills.",
+    "button": "Get Started"
+  },
+  "HeaderPage": {
+    "home": "ThumbnailRater",
+    "dashboard": "Dashboard",
+    "create": "Create",
+    "pricing": "Pricing",
+    "about": "About",
+    "explore": "Explore"
+  },
+  "FooterPage": {
+    "thumbnailrater": "ThumbnailRater",
+    "resources": "Resources",
+    "follow": "Follow me",
+    "legal": "Legal"
+  },
+  "CreatePage": {
+    "title": "Create a Thumbnail Test",
+    "description": "Create your test so that other people can vote on their favorite thumbnail and help you redesign or pick the best options.",
+    "label_title": "Your Test Title",
+    "A_image_title": "Test Image A",
+    "B_image_title": "Test Image B",
+    "button": "Create Thumbnail Test"
+  },
+  "DashboardPage": {
+    "title": "Your Thumbnail Tests",
+    "description": "You have no thumbnail tests",
+    "create_button": "Create a Thumbnail Test",
+    "view_button": "View Results"
+  },
+  "ExplorePage": {
+    "title": "Community Review",
+    "description": "No thumbnails to display",
+    "load_button": "Load More"
+  },
+  "ThumbnailsPage": {
+    "A_image_title": "Test Image A",
+    "B_image_title": "Test Image B",
+    "A_vote_button": "Vote A",
+    "B_vote_button": "Vote B"
+  },
+  "CommentsPage": {
+    "title": "Comments",
+    "sub_title": "Your Comment",
+    "description": "Leave a comment to help the content creator improve their thumbnail designs",
+    "push_button": "Push Comment",
+    "prompt": "You must upgrade to view all the feedback users left for you"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} fr {🇫🇷 Français} en {🇺🇸 English} ja {🇯🇵 日本語} ko {🇰🇷 한국어} zh {🇨🇳 中文} other {Unknown}}"
+  }
+}

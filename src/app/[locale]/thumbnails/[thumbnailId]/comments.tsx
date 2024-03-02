@@ -13,15 +13,16 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Doc } from "../../../../convex/_generated/dataModel";
+import { Doc } from "../../../../../convex/_generated/dataModel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea"
 import { useMutation, useQuery } from "convex/react"
-import { api } from "../../../../convex/_generated/api"
+import { api } from "../../../../../convex/_generated/api"
 import { useToast } from "@/components/ui/use-toast"
 import { formatDistance } from 'date-fns'
 import { useIsSubscribed } from "@/hooks/useIsSubscribed"
 import { UpgradeButton } from "@/components/upgrade-button"
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
     text: z.string().min(1).max(500),
@@ -31,6 +32,7 @@ const formSchema = z.object({
 export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
     const isSubscriped = useIsSubscribed();
     const addComment = useMutation(api.thumbnails.addComment);
+    const t = useTranslations('CommentsPage');
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -63,7 +65,7 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
 
     return (
         <div>
-            <h2 className="my-8 text-4xl font-bold text-center">Comments</h2>
+            <h2 className="my-8 text-4xl font-bold text-center">{t('title')}</h2>
             <div className="max-w-lg mx-auto mb-24">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -72,18 +74,18 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
                             name="text"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Your Comment</FormLabel>
+                                    <FormLabel>{t('sub_title')}</FormLabel>
                                     <FormControl>
                                         <Textarea {...field} />
                                     </FormControl>
                                     <FormDescription>
-                                        Leave a comment to help the content creator improve their thumbnail designs
+                                        {t('description')}
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
-                        <Button type="submit">Push Comment</Button>
+                        <Button type="submit">{t('push_button')}</Button>
                     </form>
                 </Form>
                 <div className="space-y-8 mt-12">
@@ -106,7 +108,7 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
                     {!isSubscriped &&
                         <div className="border p-8 rounded text-center space-y-4">
                             <div>
-                                You must upgrade to view all the feedback users left for you
+                                {t('prompt')}
                             </div>
                             <UpgradeButton />
                         </div>}

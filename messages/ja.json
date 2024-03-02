@@ -1,0 +1,57 @@
+{
+  "HomePage": {
+    "title": "サムネイルに関するフィードバックを得る最も簡単な方法",
+    "description": "2 つのサムネイルをアップロードし、リンクを友達に送信すると、最高のデザイン スキルを磨くことができます。",
+    "button": "始めましょう"
+  },
+  "HeaderPage": {
+    "home": "サムネイル評価者",
+    "dashboard": "ダッシュボード",
+    "create": "作成する",
+    "pricing": "価格設定",
+    "about": "について",
+    "explore": "探検する"
+  },
+  "FooterPage": {
+    "thumbnailrater": "サムネイル評価者",
+    "resources": "リソース",
+    "follow": "私に従ってください",
+    "legal": "法律上の"
+  },
+  "CreatePage": {
+    "title": "サムネイル テストを作成する",
+    "description": "テストを作成すると、他の人がお気に入りのサムネイルに投票して、最適なオプションを再設計したり選択したりできるようになります。",
+    "label_title": "テストのタイトル",
+    "A_image_title": "テスト画像 A",
+    "B_image_title": "テスト画像 B",
+    "button": "サムネイルテストの作成"
+  },
+  "DashboardPage": {
+    "title": "サムネイルのテスト",
+    "description": "サムネイル テストがありません",
+    "create_button": "サムネイル テストを作成する",
+    "view_button": "結果を見る"
+  },
+  "ExplorePage": {
+    "title": "コミュニティレビュー",
+    "description": "表示するサムネイルがありません",
+    "load_button": "もっと読み込む"
+  },
+  "ThumbnailsPage": {
+    "A_image_title": "テスト画像 A",
+    "B_image_title": "テスト画像 B",
+    "A_vote_button": "A に投票する",
+    "B_vote_button": "B に投票"
+  },
+  "CommentsPage": {
+    "title": "コメント",
+    "sub_title": "あなたのコメント",
+    "description": "コンテンツ作成者がサムネイルのデザインを改善できるようにコメントを残してください",
+    "push_button": "コメントをプッシュする",
+    "prompt": "ユーザーがあなたに残したすべてのフィードバックを表示するには、アップグレードする必要があります"
+  },
+  "LocaleSwitcher": {
+    "label": "言語を変えてください",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} fr {🇫🇷 Français} en {🇺🇸 English} ja {🇯🇵 日本語} ko {🇰🇷 한국어} zh {🇨🇳 中文} other {未知}}"
+  }
+}

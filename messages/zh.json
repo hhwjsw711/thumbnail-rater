@@ -1,0 +1,57 @@
+{
+  "HomePage": {
+    "title": "获取缩略图反馈的最简单方法",
+    "description": "上传您的两个缩略图并将链接发送给您的朋友，以帮助您磨练最佳的设计技能。",
+    "button": "开始使用"
+  },
+  "HeaderPage": {
+    "home": "缩略图评分器",
+    "dashboard": "仪表板",
+    "create": "创建",
+    "pricing": "价格",
+    "about": "关于",
+    "explore": "探索"
+  },
+  "FooterPage": {
+    "thumbnailrater": "缩略图评分器",
+    "resources": "资源",
+    "follow": "关注我",
+    "legal": "法律信息"
+  },
+  "CreatePage": {
+    "title": "创建缩略图测试",
+    "description": "创建您的测试，以便其他人可以对他们最喜欢的缩略图进行投票，并帮助您重新设计或选择最佳选项。",
+    "label_title": "您的测试标题",
+    "A_image_title": "测试图像 A",
+    "B_image_title": "测试图像 B",
+    "button": "创建缩略图测试"
+  },
+  "DashboardPage": {
+    "title": "您的缩略图测试",
+    "description": "您没有缩略图测试",
+    "create_button": "创建缩略图测试",
+    "view_button": "查看结果"
+  },
+  "ExplorePage": {
+    "title": "社区评论",
+    "description": "没有缩略图可显示",
+    "load_button": "加载更多"
+  },
+  "ThumbnailsPage": {
+    "A_image_title": "测试图像 A",
+    "B_image_title": "测试图像 B",
+    "A_vote_button": "投票给 A",
+    "B_vote_button": "投票给 B"
+  },
+  "CommentsPage": {
+    "title": "评论",
+    "sub_title": "你的评论",
+    "description": "发表评论以帮助内容创建者改进他们的缩略图设计",
+    "push_button": "推送评论",
+    "prompt": "您必须升级才能查看用户留给您的所有反馈"
+  },
+  "LocaleSwitcher": {
+    "label": "改变语言",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} fr {🇫🇷 Français} en {🇺🇸 English} ja {🇯🇵 日本語} ko {🇰🇷 한국어} zh {🇨🇳 中文} other {未知}}"
+  }
+}

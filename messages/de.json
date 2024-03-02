@@ -1,0 +1,57 @@
+{
+  "HomePage": {
+    "title": "Der einfachste Weg, Feedback zu Ihren Miniaturansichten zu erhalten",
+    "description": "Laden Sie Ihre beiden Miniaturansichten hoch und senden Sie Links an Ihre Freunde, damit Sie Ihre besten Designfähigkeiten verbessern können.",
+    "button": "Loslegen"
+  },
+  "HeaderPage": {
+    "home": "ThumbnailRater",
+    "dashboard": "Armaturenbrett",
+    "create": "Erstellen",
+    "pricing": "Preisgestaltung",
+    "about": "Um",
+    "explore": "Erkunden"
+  },
+  "FooterPage": {
+    "thumbnailrater": "ThumbnailRater",
+    "resources": "Ressourcen",
+    "follow": "Folgen Sie mir",
+    "legal": "Legal"
+  },
+  "CreatePage": {
+    "title": "Erstellen Sie einen Miniaturbildtest",
+    "description": "Erstellen Sie Ihren Test, damit andere über ihr Lieblings-Miniaturbild abstimmen und Ihnen bei der Neugestaltung oder Auswahl der besten Optionen helfen können.",
+    "label_title": "Ihr Testtitel",
+    "A_image_title": "Testbild A",
+    "B_image_title": "Testbild B",
+    "button": "Erstellen Sie einen Miniaturbildtest"
+  },
+  "DashboardPage": {
+    "title": "Ihre Thumbnail-Tests",
+    "description": "Sie haben keine Thumbnail-Tests",
+    "create_button": "Erstellen Sie einen Miniaturbildtest",
+    "view_button": "Ergebnisse anzeigen"
+  },
+  "ExplorePage": {
+    "title": "Community-Rezension",
+    "description": "Keine Miniaturansichten zum Anzeigen",
+    "load_button": "Mehr laden"
+  },
+  "ThumbnailsPage": {
+    "A_image_title": "Testbild A",
+    "B_image_title": "Testbild B",
+    "A_vote_button": "Stimme A",
+    "B_vote_button": "Stimme B"
+  },
+  "CommentsPage": {
+    "title": "Kommentare",
+    "sub_title": "Dein Kommentar",
+    "description": "Hinterlassen Sie einen Kommentar, um dem Ersteller des Inhalts zu helfen, seine Miniaturansicht-Designs zu verbessern",
+    "push_button": "Push-Kommentar",
+    "prompt": "Sie müssen ein Upgrade durchführen, um alle für Sie hinterlassenen Rückmeldungen der Benutzer anzuzeigen"
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} fr {🇫🇷 Français} en {🇺🇸 English} ja {🇯🇵 日本語} ko {🇰🇷 한국어} zh {🇨🇳 中文} other {Unbekannt}}"
+  }
+}

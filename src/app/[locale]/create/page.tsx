@@ -1,7 +1,7 @@
 "use client"
 
 import { useMutation } from "convex/react";
-import { api } from "../../../convex/_generated/api";
+import { api } from "../../../../convex/_generated/api";
 import { UploadButton, UploadFileResponse } from "@xixixao/uploadstuff/react";
 import "@xixixao/uploadstuff/react/styles.css";
 import { useState } from "react";
@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { getImageUrl } from "@/lib/utils";
 import { useSession } from "@clerk/nextjs";
 import { UpgradeButton } from "@/components/upgrade-button";
+import { useTranslations } from "next-intl";
 
 const defaultErrorState = {
     title: "",
@@ -31,13 +32,14 @@ export default function CreatePage() {
     const { toast } = useToast();
     const router = useRouter();
     const session = useSession();
+    const t = useTranslations('CreatePage');
 
     return (
         <div className="mt-16">
-            <h1 className="text-4xl font-bold mb-8">Create a Thumbnail Test</h1>
+            <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
 
             <p className="text-lg max-w-md mb-8">
-                Create your test so that other people can vote on their favorite thumbnail and help you redesign or pick the best options.
+            {t('description')}
             </p>
 
             <form
@@ -102,7 +104,7 @@ export default function CreatePage() {
                 }}
             >
                 <div className="flex flex-col gap-4 mb-8">
-                    <Label htmlFor="title">Your Test Title</Label>
+                    <Label htmlFor="title">{t('label_title')}</Label>
                     <Input id="title" type="text" name="title" placeholder="Label your test to make it easier to manage later"
                         className={clsx({
                             border: errors.title,
@@ -120,7 +122,7 @@ export default function CreatePage() {
                             "border-red-500": errors.imageA,
                         })}
                     >
-                        <h2 className="text-2xl font-bold">Test Image A</h2>
+                        <h2 className="text-2xl font-bold">{t('A_image_title')}</h2>
 
                         {imageA && (
                             <Image
@@ -152,7 +154,7 @@ export default function CreatePage() {
                                 "border-red-500": errors.imageB,
                             })}
                         >
-                            <h2 className="text-2xl font-bold">Test Image B</h2>
+                            <h2 className="text-2xl font-bold">{t('B_image_title')}</h2>
 
                             {imageB && (
                                 <Image
@@ -177,7 +179,7 @@ export default function CreatePage() {
                         </div>
                     </div>
                 </div>
-                <Button>Create Thumbnail Test</Button>
+                <Button>{t('button')}</Button>
             </form>
         </div>
     );

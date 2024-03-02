@@ -2,16 +2,17 @@
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { usePaginatedQuery, useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
+import { api } from "../../../../convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { getImageUrl } from "@/lib/utils";
 import Link from "next/link";
 import { formatDistance } from 'date-fns'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Doc } from "../../../convex/_generated/dataModel";
+import { Doc } from "../../../../convex/_generated/dataModel";
 import { useSession } from "@clerk/nextjs";
 import { SkeletonCard } from "@/components/skeleton-card";
+import { useTranslations } from "next-intl";
 
 export default function ExplorePage() {
 
@@ -27,10 +28,11 @@ export default function ExplorePage() {
         if (!session.session) return false;
         return thumbnail.voteIds.includes(session.session?.user.id);
     }
+    const t = useTranslations('ExplorePage');
 
     return (
         <div className="">
-            <h1 className="text-center text-4xl font-bold mb-12 mt-8">Community Review</h1>
+            <h1 className="text-center text-4xl font-bold mb-12 mt-8">{t('title')}</h1>
 
             {isLoading && (
                 <div className="animate-pulse mb-12 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-40">
@@ -49,7 +51,7 @@ export default function ExplorePage() {
                         width="400"
                         height="400"
                     />
-                    <div className="text-2xl font-bold">No thumbnails to display</div>
+                    <div className="text-2xl font-bold">{t('description')}</div>
                 </div>
             )}
             {thumbnails.length > 0 && (
@@ -92,7 +94,7 @@ export default function ExplorePage() {
             {status === "CanLoadMore" && (
                 <Button className="w-full mb-24" onClick={() => {
                     loadMore(10);
-                }}>Load More</Button>
+                }}>{t('load_button')}</Button>
             )}
         </div>
     );

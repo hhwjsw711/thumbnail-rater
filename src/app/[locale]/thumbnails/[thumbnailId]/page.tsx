@@ -2,8 +2,8 @@
 
 import { useMutation, useQuery } from "convex/react";
 import { useParams } from "next/navigation";
-import { api } from "../../../../convex/_generated/api";
-import { Id } from "../../../../convex/_generated/dataModel";
+import { api } from "../../../../../convex/_generated/api";
+import { Id } from "../../../../../convex/_generated/dataModel";
 import { getImageUrl } from "@/lib/utils";
 import Image from "next/image";
 import { shuffle } from "lodash";
@@ -12,10 +12,12 @@ import { useSession } from "@clerk/nextjs";
 import { Progress } from "@/components/ui/progress";
 import { useRef } from "react";
 import { Comments } from "./comments";
+import { useTranslations } from "next-intl";
 
 export default function ThumbnailPage() {
     const params = useParams<{ thumbnailId: Id<"thumbnails"> }>();
     const thumbnailId = params.thumbnailId;
+    const t = useTranslations('ThumbnailsPage');
 
     console.log(params.thumbnailId);
 
@@ -55,7 +57,7 @@ export default function ThumbnailPage() {
         <div className="mt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex items-center flex-col gap-4">
-                    <h2 className="text-xl md:text-4xl font-bold text-center mb-4">Test Image A</h2>
+                    <h2 className="text-xl md:text-4xl font-bold text-center mb-4">{t('A_image_title')}</h2>
                     <Image
                         width="200"
                         height="200"
@@ -69,11 +71,11 @@ export default function ThumbnailPage() {
                             <div className="text-lg">{getVotesFor(firstImageId)} votes</div>
                         </>
                     ) :
-                        <Button onClick={() => { voteOnThumbnail({ thumbnailId, imageId: firstImageId, }); }} size="lg" className="w-fit">Vote A</Button>
+                        <Button onClick={() => { voteOnThumbnail({ thumbnailId, imageId: firstImageId, }); }} size="lg" className="w-fit">{t('A_vote_button')}</Button>
                     }
                 </div>
                 <div className="flex items-center flex-col gap-4">
-                    <h2 className="text-xl md:text-4xl font-bold text-center mb-4">Test Image B</h2>
+                    <h2 className="text-xl md:text-4xl font-bold text-center mb-4">{t('B_image_title')}</h2>
                     <Image
                         width="200"
                         height="200"
@@ -87,7 +89,7 @@ export default function ThumbnailPage() {
                             <div className="text-lg">{getVotesFor(secondImageId)} votes</div>
                         </>
                     ) :
-                        <Button onClick={() => { voteOnThumbnail({ thumbnailId, imageId: secondImageId, }); }} size="lg" className="w-fit">Vote B</Button>
+                        <Button onClick={() => { voteOnThumbnail({ thumbnailId, imageId: secondImageId, }); }} size="lg" className="w-fit">{t('B_vote_button')}</Button>
                     }
                 </div>
             </div>

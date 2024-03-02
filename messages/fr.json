@@ -1,0 +1,57 @@
+{
+  "HomePage": {
+    "title": "Le moyen le plus simple d'obtenir des commentaires sur vos miniatures",
+    "description": "Téléchargez vos deux miniatures et envoyez des liens à vos amis pour vous aider à perfectionner vos meilleures compétences en conception.",
+    "button": "Commencer"
+  },
+  "HeaderPage": {
+    "home": "VignetteRater",
+    "dashboard": "Tableau de bord",
+    "create": "Créer",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "explore": "Explorer"
+  },
+  "FooterPage": {
+    "thumbnailrater": "VignetteRater",
+    "resources": "Ressources",
+    "follow": "Suis-moi",
+    "legal": "Légale"
+  },
+  "CreatePage": {
+    "title": "Créer un test de miniature",
+    "description": "Créez votre test afin que d'autres personnes puissent voter pour leur vignette préférée et vous aider à repenser ou à choisir les meilleures options.",
+    "label_title": "Titre de votre test",
+    "A_image_title": "Image test A",
+    "B_image_title": "Image test B",
+    "button": "Créer un test de vignette"
+  },
+  "DashboardPage": {
+    "title": "Vos tests de vignettes",
+    "description": "Vous n'avez pas de tests de vignettes",
+    "create_button": "Créer un test de miniature",
+    "view_button": "Voir les résultats"
+  },
+  "ExplorePage": {
+    "title": "Examen communautaire",
+    "description": "Aucune vignette à afficher",
+    "load_button": "Charger plus"
+  },
+  "ThumbnailsPage": {
+    "A_image_title": "Image test A",
+    "B_image_title": "Image test B",
+    "A_vote_button": "Votez A",
+    "B_vote_button": "Votez B"
+  },
+  "CommentsPage": {
+    "title": "Commentaires",
+    "sub_title": "Votre commentaire",
+    "description": "Laissez un commentaire pour aider le créateur de contenu à améliorer la conception de ses miniatures",
+    "push_button": "Pousser le commentaire",
+    "prompt": "Vous devez effectuer une mise à niveau pour afficher tous les commentaires que les utilisateurs vous ont laissés"
+  },
+  "LocaleSwitcher": {
+    "label": "Changer de langue",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} fr {🇫🇷 Français} en {🇺🇸 English} ja {🇯🇵 日本語} ko {🇰🇷 한국어} zh {🇨🇳 中文} other {Inconnu}}"
+  }
+}

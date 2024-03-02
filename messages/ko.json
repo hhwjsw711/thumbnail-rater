@@ -1,0 +1,57 @@
+{
+  "HomePage": {
+    "title": "미리보기 이미지에 대한 피드백을 받는 가장 쉬운 방법",
+    "description": "최고의 디자인 기술을 연마하는 데 도움이 되도록 두 개의 썸네일을 업로드하고 친구에게 링크를 보내세요.",
+    "button": "시작하다"
+  },
+  "HeaderPage": {
+    "home": "썸네일평가자",
+    "dashboard": "계기반",
+    "create": "만들다",
+    "pricing": "가격",
+    "about": "에 대한",
+    "explore": "탐구하다"
+  },
+  "FooterPage": {
+    "thumbnailrater": "썸네일평가자",
+    "resources": "자원",
+    "follow": "나를 따르라",
+    "legal": "합법적인"
+  },
+  "CreatePage": {
+    "title": "썸네일 테스트 만들기",
+    "description": "다른 사람들이 자신이 가장 좋아하는 썸네일에 투표할 수 있도록 테스트를 만들고 최선의 옵션을 다시 디자인하거나 선택할 수 있도록 도와주세요.",
+    "label_title": "귀하의 시험 제목",
+    "A_image_title": "테스트 이미지 A",
+    "B_image_title": "테스트 이미지 B",
+    "button": "썸네일 테스트 만들기"
+  },
+  "DashboardPage": {
+    "title": "썸네일 테스트",
+    "description": "썸네일 테스트가 없습니다.",
+    "create_button": "썸네일 테스트 만들기",
+    "view_button": "결과 보기"
+  },
+  "ExplorePage": {
+    "title": "커뮤니티 리뷰",
+    "description": "표시할 미리보기 이미지가 없습니다.",
+    "load_button": "더 로드하기"
+  },
+  "ThumbnailsPage": {
+    "A_image_title": "테스트 이미지 A",
+    "B_image_title": "테스트 이미지 B",
+    "A_vote_button": "A 에 투표하세요",
+    "B_vote_button": "B 에게 투표하세요"
+  },
+  "CommentsPage": {
+    "title": "코멘트",
+    "sub_title": "귀하의 의견",
+    "description": "콘텐츠 제작자가 썸네일 디자인을 개선하는 데 도움이 되도록 댓글을 남겨주세요.",
+    "push_button": "푸시댓글",
+    "prompt": "사용자가 남긴 피드백을 모두 보려면 업그레이드해야 합니다."
+  },
+  "LocaleSwitcher": {
+    "label": "언어 변경",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} fr {🇫🇷 Français} en {🇺🇸 English} ja {🇯🇵 日本語} ko {🇰🇷 한국어} zh {🇨🇳 中文} other {알려지지 않은}}"
+  }
+}

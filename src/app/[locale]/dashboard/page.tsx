@@ -10,6 +10,8 @@ import Link from "next/link";
 import { formatDistance } from 'date-fns'
 import { SkeletonCard } from "@/components/skeleton-card";
 import { useTranslations } from "next-intl";
+import NavigationLink from "../NavigationLink";
+import { locales } from "@/config";
 
 export default function DashboardPage() {
 
@@ -21,7 +23,7 @@ export default function DashboardPage() {
     return (
         <div className="">
             <h1 className="text-center text-4xl font-bold mb-12 mt-8">
-            {t('title')}
+                {t('title')}
             </h1>
 
             {thumbnails === undefined && (
@@ -44,7 +46,7 @@ export default function DashboardPage() {
                     <div className="text-2xl font-bold">{t('description')}</div>
 
                     <Button asChild>
-                        <Link href="/create">{t('create_button')}</Link>
+                        <NavigationLink href="/create">{t('create_button')}</NavigationLink>
                     </Button>
                 </div>
             )}
@@ -68,7 +70,7 @@ export default function DashboardPage() {
                             </CardContent>
                             <CardFooter>
                                 <Button className="w-full" asChild>
-                                    <Link href={`/thumbnails/${thumbnail._id}`}>{t('view_button')}</Link>
+                                    <NavigationLink href={`/thumbnails/${thumbnail._id}` as '/thumbnails/:id'}>{t('view_button')}</NavigationLink>
                                 </Button>
                             </CardFooter>
                         </Card>

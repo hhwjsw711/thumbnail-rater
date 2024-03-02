@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { getImageUrl } from "@/lib/utils";
 import { useSession } from "@clerk/nextjs";
 import { UpgradeButton } from "@/components/upgrade-button";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const defaultErrorState = {
     title: "",
@@ -33,6 +33,7 @@ export default function CreatePage() {
     const router = useRouter();
     const session = useSession();
     const t = useTranslations('CreatePage');
+    const locale = useLocale();
 
     return (
         <div className="mt-16">
@@ -93,7 +94,9 @@ export default function CreatePage() {
                             profileImage: session.session?.user.imageUrl,
                         })
 
-                        router.push(`/thumbnails/${thumbnailId}`);
+                        console.log(locale);
+
+                        router.push(`${locale.startsWith('/') ? '' : '/'}${locale}/thumbnails/${thumbnailId}`);
                     } catch (err) {
                         toast({
                             title: "You ran out of a free credits",

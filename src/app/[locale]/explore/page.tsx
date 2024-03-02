@@ -13,6 +13,7 @@ import { Doc } from "../../../../convex/_generated/dataModel";
 import { useSession } from "@clerk/nextjs";
 import { SkeletonCard } from "@/components/skeleton-card";
 import { useTranslations } from "next-intl";
+import NavigationLink from "../NavigationLink";
 
 export default function ExplorePage() {
 
@@ -83,7 +84,7 @@ export default function ExplorePage() {
                                 </CardContent>
                                 <CardFooter>
                                     <Button variant={hasVoted(thumbnail) ? "outline" : "default"} className="w-full" asChild>
-                                        <Link href={`/thumbnails/${thumbnail._id}`}>{hasVoted(thumbnail) ? "View Results" : "Vote"}</Link>
+                                        <NavigationLink href={`/thumbnails/${thumbnail._id}` as '/thumbnails/:id'}>{hasVoted(thumbnail) ? "View Results" : "Vote"}</NavigationLink>
                                     </Button>
                                 </CardFooter>
                             </Card>

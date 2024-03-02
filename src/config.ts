@@ -7,8 +7,8 @@ export const pathnames = {
   '/dashboard': '/dashboard',
   '/create': '/create',
   '/explore': '/explore',
-  '/pricing': '/pricing',
-  '/about': '/about',
+  '/pricing': '/',
+  '/about': '/',
   '/thumbnails/:id': '/thumbnails/'
 } satisfies Pathnames<typeof locales>;
 

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         hostname: "kindly-kookabura-369.convex.cloud",

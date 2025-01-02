@@ -7,6 +7,9 @@ const nextConfig = {
         hostname: "hardy-panda-359.convex.cloud",
       },
       {
+        hostname: "scrupulous-magpie-596.convex.cloud",
+      },
+      {
         hostname: "thumbnailrater.com",
       },
     ],

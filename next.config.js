@@ -4,13 +4,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "kindly-kookabura-369.convex.cloud",
+        hostname: "hardy-panda-359.convex.cloud",
       },
       {
-        hostname: "silent-eel-513.convex.cloud",
-      },
-      {
-        hostname: "thumbnailcritique.com",
+        hostname: "thumbnailrater.com",
       },
     ],
   },

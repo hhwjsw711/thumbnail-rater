@@ -104,7 +104,9 @@ export function Header() {
 
           <ModeToggle />
 
-          <MenuToggle toggle={toggleOpen} />
+          {!isLoading && isAuthenticated && (
+            <MenuToggle toggle={toggleOpen} />
+          )}
         </div>
       </div>
     </div>

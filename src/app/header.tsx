@@ -1,7 +1,9 @@
 "use client";
 
 import { SignInButton, UserButton } from "@clerk/nextjs";
+import { LanguageToggle } from "./language-toggle";
 import { ModeToggle } from "./mode-toggle";
+import { useLanguage } from "@/lib/i18n/language-context";
 import Link from "next/link";
 import { useSession } from "@/lib/utils";
 import MobileNav, { MenuToggle, useMobileNavState } from "./mobile-nav";
@@ -25,6 +27,8 @@ const NotificationIcon = () => {
 };
 
 export function Header() {
+  const { t } = useLanguage();
+
   const { isLoading, isAuthenticated } = useSession();
 
   const { isOpen, toggleOpen } = useMobileNavState();
@@ -46,7 +50,7 @@ export function Header() {
             height="40"
           />
           <span className="text-xs md:text-base hidden sm:block">
-            Thumbnail Rater
+            {t('thumbnailRater')}
           </span>
         </Link>
 
@@ -54,29 +58,29 @@ export function Header() {
           {!isLoading && isAuthenticated && (
             <>
               <Link href="/dashboard" className="link">
-                Dashboard
+                {t('dashboard')}
               </Link>
               <Link href="/create" className="link">
-                Create
+                {t('create')}
               </Link>
               <Link href="/explore" className="link">
-                Explore
+                {t('explore')}
               </Link>
               <Link href="/following" className="link">
-                Following
+                {t('following')}
               </Link>
               <Link href="/account" className="link">
-                Account
+                {t('account')}
               </Link>
             </>
           )}
 
           <Link href="/changelog" className="link">
-            Changelog
+            {t('changelog')}
           </Link>
 
           <Link href="/roadmap" className="link">
-            Roadmap
+            {t('roadmap')}
           </Link>
         </div>
 
@@ -101,6 +105,8 @@ export function Header() {
               {!isAuthenticated && <SignInButton />}
             </>
           )}
+
+          <LanguageToggle />
 
           <ModeToggle />
 

@@ -40,7 +40,7 @@ export const generateAIComment = internalAction({
     );
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4-vision-preview",
+      model: "gpt-4.1",
       max_tokens: 1000,
       messages: [
         {

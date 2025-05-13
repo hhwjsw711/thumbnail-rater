@@ -46,7 +46,7 @@ export function Header() {
             height="40"
           />
           <span className="text-xs md:text-base hidden sm:block">
-            ThumbnailCritique
+            Thumbnail Rater
           </span>
         </Link>
 

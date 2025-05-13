@@ -8,11 +8,11 @@ export function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link
-              href="https://thumbnailcritique.com/"
+              href="https://thumbnailrater.com/"
               className="flex items-center"
             >
               <span className="hidden md:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                ThumbnailCritique.com
+                ThumbnailRater.com
               </span>
             </Link>
           </div>
@@ -99,10 +99,10 @@ export function Footer() {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <a
-              href="https://thumbnailcritique.com/"
+              href="https://thumbnailrater.com/"
               className="hover:underline"
             >
-              ThumbnailCritique.com
+              ThumbnailRater.com
             </a>
             . All Rights Reserved.
           </span>

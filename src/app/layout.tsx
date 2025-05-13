@@ -11,7 +11,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Thumbnail Critique",
+  title: "Thumbnail Rater",
   description: "Get feedback for your thumbnails by your peers",
 };
 
@@ -65,7 +65,7 @@ export default function RootLayout({
 
         <Script
           src="https://beamanalytics.b-cdn.net/beam.min.js"
-          data-token="97571696-c451-45e7-b454-fc262ce1e677"
+          data-token="58f8f071-d13b-4b2b-8f1a-92d43c855ff4"
           async
         ></Script>
       </head>

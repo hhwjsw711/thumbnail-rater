@@ -13,14 +13,14 @@ export default async function ChangelogPage() {
   unstable_noStore();
 
   const changelogs = await fetch(
-    `https://projectplannerai.com/api/changelog?projectId=j57crafbck4rdrfsp64ydym2tx6j2b83`
+    `https://projectplannerai.com/api/changelog?projectId=j574r3qbsnz6gm7grh67de1f5s7fvzcm`
   ).then(async (res) => res.json() as Promise<ChangeLog[]>);
 
   return (
     <div className="container max-w-5xl mx-auto">
       <div className="flex flex-row justify-between mb-8">
         <h1 className="my-12 text-[28px] leading-[34px] tracking-[-0.416px] text-neutral-12 font-bold">
-          The ThumbnailCritique Changelog
+          The ThumbnailRater Changelog
         </h1>
       </div>
 

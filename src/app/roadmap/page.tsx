@@ -53,7 +53,7 @@ export default async function RoadmapPage() {
                 <div className="flex flex-col gap-4">
                   <h2 className="text-4xl">{roadmapItem.title}</h2>
 
-                  <Markdown className="prose text-white">
+                  <Markdown className="prose dark:prose-invert">
                     {roadmapItem.description}
                   </Markdown>
                 </div>

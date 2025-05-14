@@ -23,6 +23,7 @@ import { formatDistance } from "date-fns";
 import { TrashIcon } from "lucide-react";
 import { useSession } from "@/lib/utils";
 import { AI_PROFILE_NAME } from "../../../../convex/constants";
+import Markdown from "react-markdown";
 
 const formSchema = z.object({
   text: z.string().min(1).max(500),
@@ -139,9 +140,9 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
                           )}
                         </div>
                       </div>
-                      <p className="font-sans whitespace-pre-line">
+                      <Markdown className="prose dark:prose-invert font-sans">
                         {comment.text}
-                      </p>
+                      </Markdown>
                     </div>
                   </div>
                 </div>

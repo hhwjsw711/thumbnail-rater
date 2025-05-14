@@ -52,7 +52,7 @@ export default async function ChangelogPage() {
                 <div className="flex flex-col gap-4">
                   <h2 className="text-4xl">{changelog.title}</h2>
 
-                  <Markdown className="prose text-white">
+                  <Markdown className="prose dark:prose-invert">
                     {changelog.post}
                   </Markdown>
                 </div>

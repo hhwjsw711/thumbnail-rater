@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="prose container py-12">
+    <div className="prose dark:prose-invert container py-12">
       <h1>Privacy Policy</h1>
       <p>
         ThumbnailRater (&apos;we&apos;, &apos;us&apos;, or &apos;our&apos;)

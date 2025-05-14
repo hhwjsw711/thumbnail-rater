@@ -102,7 +102,7 @@ export function Header() {
                   <UserButton />
                 </>
               )}
-              {!isAuthenticated && <SignInButton />}
+              {!isAuthenticated && <SignInButton>{t('signIn')}</SignInButton>}
             </>
           )}
 

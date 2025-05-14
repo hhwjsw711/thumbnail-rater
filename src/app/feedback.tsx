@@ -26,7 +26,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-
+import { useLanguage } from "@/lib/i18n/language-context";
 import { useToast } from "@/components/ui/use-toast";
 import useMediaQuery from "@/hooks/use-media-query";
 
@@ -34,24 +34,26 @@ type FeedbackFormProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const feedbackSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name is required",
-  }),
-  feedback: z.string().min(1, { message: "Feedback is required" }),
-});
-
 type FeedbackProps = {
   triggerContent: React.ReactNode;
 };
 
 export default function Feedback({ triggerContent }: FeedbackProps) {
+  const { t } = useLanguage();
+
   const [open, setOpen] = React.useState(false);
 
   const { isMobile } = useMediaQuery();
 
-  const description =
-    "We value your feedback. How can we improve your experience?";
+  const description = t('feedbackDescription');
+
+
+  const feedbackSchema = z.object({
+    name: z.string().min(2, {
+      message: t('nameIsRequired'),
+    }),
+    feedback: z.string().min(1, { message: t('feedbackIsRequired') }),
+  });
 
   if (isMobile) {
     return (
@@ -59,13 +61,16 @@ export default function Feedback({ triggerContent }: FeedbackProps) {
         <DrawerTrigger asChild>{triggerContent}</DrawerTrigger>
         <DrawerContent>
           <DrawerHeader className="text-left">
-            <DrawerTitle>Feedback</DrawerTitle>
+            <DrawerTitle>{t('feedback')}</DrawerTitle>
             <DrawerDescription>{description}</DrawerDescription>
           </DrawerHeader>
-          <FeedbackForm setOpen={setOpen} />
+          <FeedbackForm
+            setOpen={setOpen}
+            feedbackSchema={feedbackSchema}
+          />
           <DrawerFooter className="pt-2">
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">{t('cancel')}</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
@@ -78,16 +83,23 @@ export default function Feedback({ triggerContent }: FeedbackProps) {
       <DialogTrigger asChild>{triggerContent}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Feedback</DialogTitle>
+          <DialogTitle>{t('feedback')}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        <FeedbackForm setOpen={setOpen} />
+        <FeedbackForm
+          setOpen={setOpen}
+          feedbackSchema={feedbackSchema}
+        />
       </DialogContent>
     </Dialog>
   );
 }
 
-export function FeedbackForm({ setOpen }: FeedbackFormProps) {
+export function FeedbackForm({
+  setOpen,
+  feedbackSchema
+}: FeedbackFormProps & { feedbackSchema: any }) {
+  const { t } = useLanguage();
   const {
     control,
     handleSubmit,
@@ -115,8 +127,8 @@ export function FeedbackForm({ setOpen }: FeedbackFormProps) {
       });
       setOpen(false);
       toast({
-        title: "Feedback submitted",
-        description: "Thank you for your feedback",
+        title: t('feedbackSubmitted'),
+        description: t('thankYouForYourFeedback'),
       });
     } catch (error) {
       console.error("Failed to send feedback:", error);
@@ -130,13 +142,13 @@ export function FeedbackForm({ setOpen }: FeedbackFormProps) {
     >
       <div className="grid gap-2">
         <Label htmlFor="name">
-          Your name <span className="text-red-600">*</span>
+          {t('yourName')} <span className="text-red-600">*</span>
         </Label>
         <Controller
           name="name"
           control={control}
           render={({ field }) => (
-            <Input {...field} type="name" id="name" placeholder="Jane Doe" />
+            <Input {...field} type="name" id="name" placeholder={t('namePlaceholder')}  />
           )}
         />
         {errors.name && typeof errors.name.message === "string" && (
@@ -145,7 +157,7 @@ export function FeedbackForm({ setOpen }: FeedbackFormProps) {
       </div>
       <div className="grid gap-2">
         <Label htmlFor="feedback">
-          Your feedback <span className="text-red-600">*</span>
+          {t('yourFeedback')} <span className="text-red-600">*</span>
         </Label>
         <Controller
           name="feedback"
@@ -154,7 +166,7 @@ export function FeedbackForm({ setOpen }: FeedbackFormProps) {
             <textarea
               {...field}
               className="w-full h-32 text-sm border rounded-lg flex border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
-              placeholder="Tell us how we can improve our product"
+              placeholder={t('feedbackPlaceholder')}
             />
           )}
         />
@@ -167,10 +179,10 @@ export function FeedbackForm({ setOpen }: FeedbackFormProps) {
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Sending feedback...
+              {t('sendingFeedback')}
             </>
           ) : (
-            "Send feedback"
+            t('sendFeedback')
           )}
         </Button>
       </div>

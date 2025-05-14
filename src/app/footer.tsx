@@ -1,7 +1,12 @@
+"use client";
+
 import { XIcon, Youtube } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -19,7 +24,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Resources
+                {t('resources')}
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <Link
@@ -27,7 +32,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Gradient Tool
+                  {t('gradientTool')}
                 </Link>
               </ul>
 
@@ -37,7 +42,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Thumbnail Check
+                  {t('thumbnailCheck')}
                 </Link>
               </ul>
 
@@ -47,13 +52,13 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Thumbnail Test
+                  {t('thumbnailTest')}
                 </Link>
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Follow me
+                {t('followMe')}
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col gap-4">
                 <Link
@@ -77,17 +82,17 @@ export function Footer() {
             </div>
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Legal
+                {t('legal')}
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium flex flex-col gap-4">
                 <li>
                   <Link href="/privacy-policy" className="hover:underline">
-                    Privacy Policy
+                    {t('privacyPolicy')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/terms-of-service" className="hover:underline">
-                    Terms &amp; Conditions
+                    {t('termsAndConditions')}
                   </Link>
                 </li>
               </ul>
@@ -104,7 +109,7 @@ export function Footer() {
             >
               ThumbnailRater.com
             </a>
-            . All Rights Reserved.
+            . {t('allRightsReserved')}
           </span>
         </div>
       </div>

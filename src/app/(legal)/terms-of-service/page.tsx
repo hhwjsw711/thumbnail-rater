@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TermsOfServicePage() {
   return (
-    <div className="prose container py-12">
+    <div className="prose dark:prose-invert container py-12">
       <h1>Terms of Service</h1>
       <h2>Liability</h2>
       <p>

@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { UpgradeButton } from "@/components/upgrade-button";
 import { Id } from "../../../convex/_generated/dataModel";
 import { XIcon } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 const defaultErrorState = {
   title: "",
@@ -37,6 +38,7 @@ function ConvexImage({ imageId }: { imageId: Id<"_storage"> }) {
 }
 
 export default function CreatePage() {
+  const { t } = useLanguage();
   const generateUploadUrl = useMutation(api.files.generateUploadUrl);
   const createThumbnail = useAction(api.thumbnails.createThumbnailAction);
   const { toast } = useToast();
@@ -46,11 +48,10 @@ export default function CreatePage() {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold mb-8">Create a Thumbnail Test</h1>
+      <h1 className="text-4xl font-bold mb-8">{t('createPageTitle')}</h1>
 
       <p className="text-lg max-w-md mb-8">
-        Create your test so that other people can vote on their favorite
-        thumbnail and help you redesign or pick the best options.
+        {t('createPageDescription')}
       </p>
 
       <form
@@ -66,14 +67,14 @@ export default function CreatePage() {
           if (!title) {
             newErrors = {
               ...newErrors,
-              title: "please fill in this required field",
+              title: t('errorFillRequiredField'),
             };
           }
 
           if (images.length < 2) {
             newErrors = {
               ...newErrors,
-              images: "you must upload at least 2 thumbnails",
+              images: t('errorMinTwoThumbnails'),
             };
           }
 
@@ -82,8 +83,8 @@ export default function CreatePage() {
 
           if (hasErrors) {
             toast({
-              title: "Form Errors",
-              description: "Please fill fields on the page",
+              title: t('toastFormErrorsTitle'),
+              description: t('toastFormErrorsDescription'),
               variant: "destructive",
             });
             return;
@@ -98,11 +99,12 @@ export default function CreatePage() {
             router.push(`/thumbnails/${thumbnailId}`);
           } catch (err) {
             toast({
-              title: "You ran out of a free credits",
+              title: t('toastOutOfCreditsTitle'),
               description: (
                 <div>
-                  You must <UpgradeButton /> in order to create more thumbnail
-                  tests
+                  {t('toastOutOfCreditsDescriptionPart1')}
+                  <UpgradeButton />
+                  {t('toastOutOfCreditsDescriptionPart2')}
                 </div>
               ),
               variant: "destructive",
@@ -111,12 +113,12 @@ export default function CreatePage() {
         }}
       >
         <div className="flex flex-col gap-4 mb-8">
-          <Label htmlFor="title">Youtube Title</Label>
+          <Label htmlFor="title">{t('youtubeTitleLabel')}</Label>
           <Input
             id="title"
             type="text"
             name="title"
-            placeholder="Put your example title of your YouTube video"
+            placeholder={t('youtubeTitlePlaceholder')}
             className={clsx({
               border: errors.title,
               "border-red-500": errors.title,
@@ -129,7 +131,7 @@ export default function CreatePage() {
           {images.map((imageUrl, idx) => {
             return (
               <div key={imageUrl} className="flex flex-col relative">
-                <div>Image {idx + 1}</div>
+                <div>{t('imageLabel')} {idx + 1}</div>
                 <Button
                   size={"sm"}
                   variant="destructive"
@@ -147,9 +149,9 @@ export default function CreatePage() {
             );
           })}
 
-          <div className="flex flex-col gap-4 mb-8">
-            <Label htmlFor="title">
-              {images.length > 0 && "Another"} Thumbnail Images
+          <div className="flex flex-col gap-4 mb-8 justify-center items-center p-4 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-md aspect-[1280/720]">
+            <Label htmlFor="upload-button">
+              {images.length > 0 ? t('anotherLabel') : ""}{t('thumbnailImagesLabel')}
             </Label>
             <UploadButton
               className={(combinedState) => {
@@ -157,8 +159,8 @@ export default function CreatePage() {
               }}
               content={(progress) =>
                 progress === null || progress === 0
-                  ? `Choose File(s)`
-                  : "Uploading..."
+                  ? t('uploadChooseFiles')
+                  : t('uploadUploading')
               }
               uploadUrl={generateUploadUrl}
               fileTypes={["image/*"]}
@@ -172,7 +174,7 @@ export default function CreatePage() {
                 ]);
               }}
               onUploadError={(error: unknown) => {
-                alert(`ERROR! ${error}`);
+                alert(`${t('uploadErrorPrefix')}${error}`);
               }}
             />
             {errors.images && (
@@ -181,7 +183,7 @@ export default function CreatePage() {
           </div>
         </div>
 
-        <Button>Upload Thumbnail Test</Button>
+        <Button type="submit">{t('uploadSubmitButton')}</Button>
       </form>
     </div>
   );

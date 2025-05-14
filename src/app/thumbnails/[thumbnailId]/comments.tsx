@@ -24,6 +24,7 @@ import { TrashIcon } from "lucide-react";
 import { useSession } from "@/lib/utils";
 import { AI_PROFILE_NAME } from "../../../../convex/constants";
 import Markdown from "react-markdown";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 const formSchema = z.object({
   text: z.string().min(1).max(500),
@@ -31,6 +32,7 @@ const formSchema = z.object({
 
 export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
   const { isAuthenticated } = useSession();
+  const { t } = useLanguage();
   const addComment = useMutation(api.thumbnails.addComment);
   const adminDeleteComment = useMutation(api.thumbnails.adminDeleteComment);
   const comments = useQuery(api.thumbnails.getComments, {
@@ -59,17 +61,16 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
     })
       .then(() => {
         toast({
-          title: "Comment Added",
-          description: "Thanks for leaving your feedback",
+          title: t('toastCommentAddedTitle'),
+          description: t('toastCommentAddedDescription'),
           variant: "default",
         });
         form.reset();
       })
       .catch(() => {
         toast({
-          title: "Something happened",
-          description:
-            "We could not leave a comment, try again laterThanks for leaving your feedback",
+          title: t('toastSomethingHappenedTitle'),
+          description: t('toastCommentAddErrorDescription'),
           variant: "destructive",
         });
       });
@@ -77,7 +78,7 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
 
   return (
     <div>
-      <h2 className="mb-4 mt-12 text-2xl font-bold text-center">Comments</h2>
+      <h2 className="mb-4 mt-12 text-2xl font-bold text-center">{t('commentsSectionTitle')}</h2>
 
       {user?.isAdmin && (
         <div className="flex justify-center mb-4">
@@ -88,21 +89,21 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
               })
                 .then(() => {
                   toast({
-                    title: `Async Task Started`,
-                    description: `The AI Comment is being generated`,
+                    title: t('toastAsyncTaskStartedTitle'),
+                    description: t('toastAICommentGeneratingDescription'),
                     variant: "default",
                   });
                 })
                 .catch(() => {
                   toast({
-                    title: "Something happened",
-                    description: `We could not generate the AI Comment`,
+                    title: t('toastSomethingHappenedTitle'),
+                    description: t('toastAICommentGenerateErrorDescription'),
                     variant: "destructive",
                   });
                 });
             }}
           >
-            Generate AI Comment
+            {t('commentsGenerateAIButton')}
           </Button>
         </div>
       )}
@@ -159,21 +160,21 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
                         })
                           .then(() => {
                             toast({
-                              title: "Comment Deleted",
-                              description: "Your comment has been deleted",
+                              title: t('toastCommentDeletedTitle'),
+                              description: t('toastCommentDeletedDescription'),
                               variant: "default",
                             });
                           })
                           .catch(() => {
                             toast({
-                              title: "Something happened",
-                              description: "We could not delete your comment",
+                              title: t('toastSomethingHappenedTitle'),
+                              description: t('toastCommentDeleteErrorDescription'),
                               variant: "destructive",
                             });
                           });
                       }}
                     >
-                      <TrashIcon size="14" /> Delete
+                      <TrashIcon size="14" /> {t('commentsDeleteButton')}
                     </Button>
                   )}
                   {comment.userId !== user?._id && user?.isAdmin && (
@@ -187,7 +188,7 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
                         });
                       }}
                     >
-                      <TrashIcon size="14" /> Delete
+                      <TrashIcon size="14" /> {t('commentsDeleteButton')}
                     </Button>
                   )}
                 </div>
@@ -203,19 +204,18 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
               name="text"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Comment</FormLabel>
+                  <FormLabel>{t('commentsYourCommentLabel')}</FormLabel>
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
                   <FormDescription>
-                    leave a comment to help the content creator improve their
-                    thumbnail designs
+                    {t('commentsFormDescription')}
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">Post Comment</Button>
+            <Button type="submit">{t('commentsPostCommentButton')}</Button>
           </form>
         </Form>
       </div>

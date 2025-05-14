@@ -22,6 +22,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 function getVotesFor(thumbnail: Doc<"thumbnails">, imageId: string) {
   if (!thumbnail) return 0;
@@ -48,6 +49,7 @@ function ThumbnailTestImage({
   imageId: Id<"_storage">;
 }) {
   const voteOnThumbnail = useMutation(api.thumbnails.voteOnThumbnail);
+  const { t } = useLanguage();
 
   return (
     <div className="flex flex-col gap-4 border p-4 bg-white dark:bg-gray-950">
@@ -75,7 +77,7 @@ function ThumbnailTestImage({
             {thumbnail.name} <CheckCircleIcon size={12} />
           </div>
           <div className="flex text-gray-700 dark:text-gray-300">
-            <div>152K Views</div>
+            <div>{t('thumbnailPageHardcodedViews')}</div>
             <DotIcon />
             {formatDistance(new Date(thumbnail._creationTime), new Date(), {
               addSuffix: true,
@@ -90,7 +92,7 @@ function ThumbnailTestImage({
             value={getVotePercent(thumbnail, imageId)}
             className="w-full bg-gray-200"
           />
-          <div className="text-lg">{getVotesFor(thumbnail, imageId)} votes</div>
+          <div className="text-lg">{getVotesFor(thumbnail, imageId)} {t('thumbnailPageVotesText')}</div>
         </>
       ) : (
         <Button
@@ -103,7 +105,7 @@ function ThumbnailTestImage({
           size="lg"
           className="w-fit self-center"
         >
-          Vote
+          {t('thumbnailPageVoteButton')}
         </Button>
       )}
     </div>
@@ -113,6 +115,7 @@ function ThumbnailTestImage({
 export default function ThumbnailPage() {
   const params = useParams<{ thumbnailId: Id<"thumbnails"> }>();
   const thumbnailId = params.thumbnailId;
+  const { t } = useLanguage();
   const thumbnail = useQuery(api.thumbnails.getThumbnail, {
     thumbnailId,
   });
@@ -125,20 +128,20 @@ export default function ThumbnailPage() {
     api.users.getProfile,
     thumbnail
       ? {
-          userId: thumbnail.userId,
-        }
+        userId: thumbnail.userId,
+      }
       : "skip"
   );
 
   if (!thumbnail || !session.session) {
-    return <div>Loading...</div>;
+    return <div>{t('thumbnailPageLoading')}</div>;
   }
 
   const hasVoted = Boolean(
     user &&
-      (user._id === thumbnail.userId
-        ? true
-        : thumbnail.voteIds.includes(user._id))
+    (user._id === thumbnail.userId
+      ? true
+      : thumbnail.voteIds.includes(user._id))
   );
 
   const sortedImages = thumbnail.images
@@ -152,7 +155,7 @@ export default function ThumbnailPage() {
   return (
     <div className="gap-12 flex flex-col">
       <div className="flex items-center justify-center gap-2">
-        Uploaded by
+        {t('thumbnailPageUploadedBy')}
         <Link
           href={`/profile/${thumbnail.userId}`}
           className="dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-700 text-gray-900 flex items-center justify-center gap-2"
@@ -173,13 +176,13 @@ export default function ThumbnailPage() {
               value="grid"
               className="flex items-center justify-center gap-2"
             >
-              <LayoutGrid /> Grid
+              <LayoutGrid /> {t('thumbnailPageGridTab')}
             </TabsTrigger>
             <TabsTrigger
               className="flex items-center justify-center gap-2"
               value="gallery"
             >
-              <GalleryHorizontal /> Gallery
+              <GalleryHorizontal /> {t('thumbnailPageGalleryTab')}
             </TabsTrigger>
           </TabsList>
 
@@ -222,11 +225,11 @@ export default function ThumbnailPage() {
                   }}
                   className="w-fit self-center flex gap-2"
                 >
-                  <ArrowLeftIcon size={"14"} /> Previous
+                  <ArrowLeftIcon size={"14"} /> {t('thumbnailPagePreviousButton')}
                 </Button>
 
                 <div>
-                  {currentImageIndex + 1} of {thumbnail.images.length}
+                  {currentImageIndex + 1} {t('thumbnailPageOfText')} {thumbnail.images.length}
                 </div>
 
                 <Button
@@ -240,7 +243,7 @@ export default function ThumbnailPage() {
                   }}
                   className="w-fit self-center flex gap-2"
                 >
-                  Next <ArrowRightIcon size={"14"} />
+                  {t('thumbnailPageNextButton')} <ArrowRightIcon size={"14"} />
                 </Button>
               </div>
             </div>

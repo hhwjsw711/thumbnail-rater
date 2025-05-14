@@ -5,8 +5,8 @@ export const yue: TranslationType = {
   dashboard: "儀表板",
   create: "創建",
   explore: "探索",
-  following: "關注緊",
+  following: "追蹤",
   account: "賬戶",
-  changelog: "更新日誌",
-  roadmap: "路線圖",
+  changelog: "更新記錄",
+  roadmap: "發展計劃",
 } as const;

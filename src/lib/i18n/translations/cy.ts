@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const cy: TranslationType = {
-  thumbnailRater: "Graddwr Lluniau Bach",
+  thumbnailRater: "GwerthuswrMiniaturau",
   dashboard: "Dangosfwrdd",
   create: "Creu",
   explore: "Archwilio",
   following: "Dilyn",
   account: "Cyfrif",
-  changelog: "Cofnod Newidiadau",
-  roadmap: "Map Ffordd",
+  changelog: "Newidiadau",
+  roadmap: "Cynllun",
 } as const;

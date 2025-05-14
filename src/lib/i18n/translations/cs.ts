@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const cs: TranslationType = {
-  thumbnailRater: "Hodnotitel Miniatur",
-  dashboard: "Přístrojová Deska",
+  thumbnailRater: "HodnotitelNáhledů",
+  dashboard: "Nástěnka",
   create: "Vytvořit",
   explore: "Prozkoumat",
   following: "Sledování",
   account: "Účet",
-  changelog: "Seznam Změn",
-  roadmap: "Plán Vývoje",
+  changelog: "Změny",
+  roadmap: "Plán",
 } as const;

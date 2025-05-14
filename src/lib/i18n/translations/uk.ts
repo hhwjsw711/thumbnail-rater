@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const uk: TranslationType = {
-  thumbnailRater: "Оцінювач Мініатюр",
-  dashboard: "Панель Керування",
+  thumbnailRater: "ОцінювачМініатюр",
+  dashboard: "Панель",
   create: "Створити",
-  explore: "Досліджувати",
+  explore: "Дослідити",
   following: "Підписки",
-  account: "Обліковий Запис",
-  changelog: "Журнал Змін",
-  roadmap: "Дорожня Карта",
+  account: "Акаунт",
+  changelog: "Зміни",
+  roadmap: "План Розвитку",
 } as const;

@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const nl: TranslationType = {
-  thumbnailRater: "Miniatuurbeoordelaar",
+  thumbnailRater: "MiniatuurBeoordelaar",
   dashboard: "Dashboard",
-  create: "Maken",
+  create: "Aanmaken",
   explore: "Verkennen",
   following: "Volgend",
   account: "Account",
-  changelog: "Wijzigingslogboek",
+  changelog: "Wijzigingen",
   roadmap: "Routekaart",
 } as const;

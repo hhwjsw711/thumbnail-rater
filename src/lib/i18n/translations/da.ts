@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const da: TranslationType = {
-  thumbnailRater: "Thumbnail Bedømmer",
-  dashboard: "Kontrolpanel",
+  thumbnailRater: "ThumbnailVurderer",
+  dashboard: "Oversigt",
   create: "Opret",
   explore: "Udforsk",
   following: "Følger",
   account: "Konto",
-  changelog: "Ændringslog",
-  roadmap: "Køreplan",
+  changelog: "Ændringer",
+  roadmap: "Vejplan",
 } as const;

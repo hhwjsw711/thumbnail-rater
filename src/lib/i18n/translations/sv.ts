@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const sv: TranslationType = {
-  thumbnailRater: "Miniatyrbedömare",
-  dashboard: "Instrumentpanel",
+  thumbnailRater: "MiniatyrBedömare",
+  dashboard: "Kontrollpanel",
   create: "Skapa",
   explore: "Utforska",
   following: "Följer",
   account: "Konto",
-  changelog: "Ändringslogg",
+  changelog: "Ändringar",
   roadmap: "Färdplan",
 } as const;

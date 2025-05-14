@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const hi: TranslationType = {
-  thumbnailRater: "थंबनेल रेटर",
+  thumbnailRater: "थंबनेलरेटर",
   dashboard: "डैशबोर्ड",
   create: "बनाएं",
   explore: "खोजें",
-  following: "फॉलो कर रहे हैं",
+  following: "फॉलोइंग",
   account: "खाता",
-  changelog: "परिवर्तन लॉग",
+  changelog: "बदलाव",
   roadmap: "रोडमैप",
 } as const;

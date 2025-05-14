@@ -1,7 +1,7 @@
 import type { TranslationType } from './types';
 
 export const ko: TranslationType = {
-  thumbnailRater: "썸네일 평가기",
+  thumbnailRater: "썸네일레이터",
   dashboard: "대시보드",
   create: "생성",
   explore: "탐색",

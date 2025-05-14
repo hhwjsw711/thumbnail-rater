@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const hu: TranslationType = {
-  thumbnailRater: "Bélyegkép Értékelő",
-  dashboard: "Irányítópult",
+  thumbnailRater: "BélyegképÉrtékelő",
+  dashboard: "Vezérlőpult",
   create: "Létrehozás",
   explore: "Felfedezés",
   following: "Követés",
   account: "Fiók",
-  changelog: "Változásnapló",
-  roadmap: "Ütemterv",
+  changelog: "Változások",
+  roadmap: "Fejlesztési Terv",
 } as const;

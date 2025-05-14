@@ -1,7 +1,7 @@
 "use client";
 
 import { SignInButton, UserButton } from "@clerk/nextjs";
-import { LanguageToggle } from "./language-toggle";
+import { ChangeLanguage } from "./change-language";
 import { ModeToggle } from "./mode-toggle";
 import { useLanguage } from "@/lib/i18n/language-context";
 import Link from "next/link";
@@ -106,7 +106,7 @@ export function Header() {
             </>
           )}
 
-          <LanguageToggle />
+          <ChangeLanguage />
 
           <ModeToggle />
 

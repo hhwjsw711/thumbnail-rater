@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const he: TranslationType = {
-  thumbnailRater: "מדרג תמונות ממוזערות",
+  thumbnailRater: "מדרגתמונותממוזערות",
   dashboard: "לוח בקרה",
   create: "יצירה",
-  explore: "חקירה",
-  following: "עוקב אחרי",
+  explore: "גילוי",
+  following: "עוקב",
   account: "חשבון",
-  changelog: "יומן שינויים",
+  changelog: "שינויים",
   roadmap: "מפת דרכים",
 } as const;

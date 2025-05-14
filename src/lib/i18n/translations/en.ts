@@ -1,7 +1,7 @@
 import type { TranslationType } from './types';
 
 export const en: TranslationType = {
-  thumbnailRater: "Thumbnail Rater",
+  thumbnailRater: "ThumbnailRater",
   dashboard: "Dashboard",
   create: "Create",
   explore: "Explore",

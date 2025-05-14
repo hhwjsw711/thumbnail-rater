@@ -1,12 +1,12 @@
 import type { TranslationType } from './types';
 
 export const fi: TranslationType = {
-  thumbnailRater: "Pikkukuva-arvioija",
+  thumbnailRater: "PienoiskuvaArvioija",
   dashboard: "Kojelauta",
   create: "Luo",
   explore: "Tutki",
-  following: "Seurataan",
+  following: "Seurannassa",
   account: "Tili",
-  changelog: "Muutosloki",
+  changelog: "Muutokset",
   roadmap: "Tiekartta",
 } as const;

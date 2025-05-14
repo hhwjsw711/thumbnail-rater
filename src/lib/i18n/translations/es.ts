@@ -9,4 +9,8 @@ export const es: TranslationType = {
   account: "Cuenta",
   changelog: "Cambios",
   roadmap: "Ruta",
+  heroTitle: "La forma más fácil de obtener comentarios sobre tus miniaturas",
+  heroDescription: "Sube tus variaciones de miniaturas y envía enlaces a tus amigos para mejorar tus habilidades de diseño.",
+  createThumbnail: "Crear Miniatura",
+  signInToGetStarted: "Iniciar Sesión para Comenzar"
 } as const;

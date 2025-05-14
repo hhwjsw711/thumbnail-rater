@@ -9,4 +9,8 @@ export const vi: TranslationType = {
   account: "Tài Khoản",
   changelog: "Thay Đổi",
   roadmap: "Lộ Trình",
+  heroTitle: "Cách dễ dàng nhất để nhận phản hồi về hình thu nhỏ của bạn",
+  heroDescription: "Tải lên các biến thể hình thu nhỏ và gửi liên kết cho bạn bè để giúp bạn hoàn thiện kỹ năng thiết kế.",
+  createThumbnail: "Tạo Hình Thu Nhỏ",
+  signInToGetStarted: "Đăng nhập để Bắt đầu"
 } as const;

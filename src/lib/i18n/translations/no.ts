@@ -9,4 +9,8 @@ export const no: TranslationType = {
   account: "Konto",
   changelog: "Endringer",
   roadmap: "Veikart",
+  heroTitle: "Den enkleste måten å få tilbakemelding på miniatyrbildene dine",
+  heroDescription: "Last opp variasjoner av miniatyrbildene dine og send lenker til vennene dine for å hjelpe deg med å forbedre designferdighetene dine.",
+  createThumbnail: "Opprett Miniatyrbilde",
+  signInToGetStarted: "Logg inn for å komme i gang"
 } as const;

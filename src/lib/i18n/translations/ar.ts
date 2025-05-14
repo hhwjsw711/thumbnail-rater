@@ -9,4 +9,8 @@ export const ar: TranslationType = {
   account: "الحساب",
   changelog: "التغييرات",
   roadmap: "خطة التطوير",
+  heroTitle: "أسهل طريقة للحصول على تعليقات حول الصور المصغرة",
+  heroDescription: "قم بتحميل أشكال مختلفة من الصور المصغرة وأرسل روابط لأصدقائك لمساعدتك في تحسين مهارات التصميم لديك.",
+  createThumbnail: "إنشاء صورة مصغرة",
+  signInToGetStarted: "تسجيل الدخول للبدء"
 } as const;

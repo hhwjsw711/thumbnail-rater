@@ -83,5 +83,21 @@ export const cy: TranslationType = {
   commentsDeleteButton: "Dileu",
   commentsYourCommentLabel: "Eich Sylw",
   commentsFormDescription: "Gadewch sylw i helpu'r crëwr cynnwys i wella eu dyluniadau mân-luniau.",
-  commentsPostCommentButton: "Postio Sylw"
+  commentsPostCommentButton: "Postio Sylw",
+  dashboardTitle: "Eich Profion Mân-luniau",
+  dashboardNoFoundIconAlt: "eicon heb ei ddarganfod",
+  dashboardNoTests: "Nid oes gennych unrhyw brofion mân-luniau",
+  dashboardCreateTestButton: "Creu Prawf Mân-lun",
+  dashboardImageTestAlt: "prawf delwedd",
+  dashboardVotesLabel: "pleidleisiau",
+  dashboardViewResultsButton: "Gweld Canlyniadau",
+  explorePageTitle: "Adolygiad Cymunedol",
+  exploreNoThumbnailsIconAlt: "eicon heb ei ddarganfod",
+  exploreNoThumbnailsToDisplay: "Dim mân-luniau i'w harddangos",
+  exploreThumbnailImageAlt: "prawf delwedd",
+  exploreVotesLabel: "pleidleisiau",
+  exploreViewResultsButton: "Gweld Canlyniadau",
+  exploreVoteButton: "Pleidleisio",
+  exploreLoadMoreButton: "Llwytho Mwy",
+  deleteThumbnailButtonAriaLabel: "Dileu mân-lun gyda'r teitl \"{{title}}\""
 } as const;

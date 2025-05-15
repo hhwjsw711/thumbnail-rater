@@ -15,8 +15,10 @@ import Link from "next/link";
 import { formatDistance } from "date-fns";
 import { SkeletonCard } from "@/components/skeleton-card";
 import { getTotalVotes } from "@/util/getTotalVotes";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function DashboardPage() {
+  const { t } = useLanguage();
   const { isAuthenticated } = useSession();
   const thumbnails = useQuery(
     api.thumbnails.getMyThumbnails,
@@ -28,7 +30,7 @@ export default function DashboardPage() {
   return (
     <div className="">
       <h1 className="text-center text-4xl font-bold mb-12">
-        Your Thumbnail Tests
+        {t('dashboardTitle')}
       </h1>
 
       {thumbnails === undefined && (
@@ -44,14 +46,14 @@ export default function DashboardPage() {
           <Image
             className="rounded-lg bg-white p-12"
             src="/void.svg"
-            alt="no found icon"
+            alt={t('dashboardNoFoundIconAlt')}
             width="400"
             height="400"
           />
-          <div className="text-2xl font-bold">You have no thumbnail tests</div>
+          <div className="text-2xl font-bold">{t('dashboardNoTests')}</div>
 
           <Button asChild>
-            <Link href="/create">Create a Thumbnail Test</Link>
+            <Link href="/create">{t('dashboardCreateTestButton')}</Link>
           </Button>
         </div>
       )}
@@ -64,7 +66,7 @@ export default function DashboardPage() {
                 <div className="relative aspect-[1280/720]">
                   {thumbnail.urls[0] && (
                     <Image
-                      alt="image test"
+                      alt={t('dashboardImageTestAlt')}
                       className="object-cover"
                       src={thumbnail.urls[0]}
                       layout="fill"
@@ -83,12 +85,12 @@ export default function DashboardPage() {
                     }
                   )}
                 </p>
-                <p>votes: {getTotalVotes(thumbnail)}</p>
+                <p>{t('dashboardVotesLabel')}: {getTotalVotes(thumbnail)}</p>
               </CardContent>
               <CardFooter>
                 <Button className="w-full" asChild>
                   <Link href={`/thumbnails/${thumbnail._id}`}>
-                    View Results
+                    {t('dashboardViewResultsButton')}
                   </Link>
                 </Button>
               </CardFooter>

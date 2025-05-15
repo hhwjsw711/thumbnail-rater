@@ -83,5 +83,21 @@ export const pt: TranslationType = {
   commentsDeleteButton: "Excluir",
   commentsYourCommentLabel: "Seu Comentário",
   commentsFormDescription: "Deixe um comentário para ajudar o criador de conteúdo a melhorar o design de suas miniaturas.",
-  commentsPostCommentButton: "Postar Comentário"
+  commentsPostCommentButton: "Postar Comentário",
+  dashboardTitle: "Os Seus Testes de Miniaturas",
+  dashboardNoFoundIconAlt: "ícone não encontrado",
+  dashboardNoTests: "Você não tem testes de miniaturas",
+  dashboardCreateTestButton: "Criar Teste de Miniatura",
+  dashboardImageTestAlt: "teste de imagem",
+  dashboardVotesLabel: "votos",
+  dashboardViewResultsButton: "Ver Resultados",
+  explorePageTitle: "Avaliação da Comunidade",
+  exploreNoThumbnailsIconAlt: "ícone não encontrado",
+  exploreNoThumbnailsToDisplay: "Nenhuma miniatura para exibir",
+  exploreThumbnailImageAlt: "teste de imagem",
+  exploreVotesLabel: "votos",
+  exploreViewResultsButton: "Ver Resultados",
+  exploreVoteButton: "Votar",
+  exploreLoadMoreButton: "Carregar Mais",
+  deleteThumbnailButtonAriaLabel: "Excluir miniatura intitulada \"{{title}}\""
 } as const;

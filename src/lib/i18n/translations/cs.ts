@@ -83,5 +83,21 @@ export const cs: TranslationType = {
   commentsDeleteButton: "Smazat",
   commentsYourCommentLabel: "Váš komentář",
   commentsFormDescription: "Zanechte komentář, abyste pomohli tvůrci obsahu vylepšit návrhy náhledů.",
-  commentsPostCommentButton: "Odeslat komentář"
+  commentsPostCommentButton: "Odeslat komentář",
+  dashboardTitle: "Vaše testy miniatur",
+  dashboardNoFoundIconAlt: "ikona nenalezena",
+  dashboardNoTests: "Nemáte žádné testy miniatur",
+  dashboardCreateTestButton: "Vytvořit test miniatury",
+  dashboardImageTestAlt: "test obrázku",
+  dashboardVotesLabel: "hlasů",
+  dashboardViewResultsButton: "Zobrazit výsledky",
+  explorePageTitle: "Komunitní recenze",
+  exploreNoThumbnailsIconAlt: "ikona nenalezena",
+  exploreNoThumbnailsToDisplay: "Žádné miniatury k zobrazení",
+  exploreThumbnailImageAlt: "test obrázku",
+  exploreVotesLabel: "hlasů",
+  exploreViewResultsButton: "Zobrazit výsledky",
+  exploreVoteButton: "Hlasovat",
+  exploreLoadMoreButton: "Načíst další",
+  deleteThumbnailButtonAriaLabel: "Smazat miniaturu s názvem \"{{title}}\""
 } as const;

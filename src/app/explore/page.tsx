@@ -23,8 +23,10 @@ import { useSession } from "@clerk/nextjs";
 import { SkeletonCard } from "@/components/skeleton-card";
 import { TrashIcon } from "lucide-react";
 import { getTotalVotes } from "@/util/getTotalVotes";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function ExplorePage() {
+  const { t } = useLanguage();
   const {
     results: thumbnails,
     status,
@@ -36,7 +38,7 @@ export default function ExplorePage() {
     { initialNumItems: 10 }
   );
 
-  const session = useSession();
+  const clerkSession = useSession();
   const { isAuthenticated } = useConvexAuth();
 
   const user = useQuery(
@@ -45,7 +47,7 @@ export default function ExplorePage() {
   );
 
   function hasVoted(thumbnail: Doc<"thumbnails">) {
-    if (!session.session) return false;
+    if (!clerkSession.session) return false;
     if (!user) return false;
     if (user._id === thumbnail.userId) return true;
     return thumbnail.voteIds.includes(user._id);
@@ -55,7 +57,7 @@ export default function ExplorePage() {
 
   return (
     <div className="">
-      <h1 className="text-center text-4xl font-bold mb-12">Community Review</h1>
+      <h1 className="text-center text-4xl font-bold mb-12">{t('explorePageTitle')}</h1>
 
       {isLoading && (
         <div className="animate-pulse mb-12 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-40">
@@ -70,11 +72,11 @@ export default function ExplorePage() {
           <Image
             className="rounded-lg bg-white p-12"
             src="/void.svg"
-            alt="no found icon"
+            alt={t('exploreNoThumbnailsIconAlt')}
             width="400"
             height="400"
           />
-          <div className="text-2xl font-bold">No thumbnails to display</div>
+          <div className="text-2xl font-bold">{t('exploreNoThumbnailsToDisplay')}</div>
         </div>
       )}
 
@@ -94,6 +96,7 @@ export default function ExplorePage() {
                             });
                           }}
                           className="absolute right-2 top-2 z-10"
+                          aria-label={t('deleteThumbnailButtonAriaLabel', { title: thumbnail.title })}
                         >
                           <TrashIcon />
                         </Button>
@@ -101,7 +104,7 @@ export default function ExplorePage() {
                       <div className="relative aspect-[1280/720]">
                         {thumbnail.urls[0] && (
                           <Image
-                            alt="image test"
+                            alt={t('exploreThumbnailImageAlt')}
                             className="object-cover"
                             src={thumbnail.urls[0]}
                             layout="fill"
@@ -134,7 +137,7 @@ export default function ExplorePage() {
                       </div>
                       <p>{thumbnail.title}</p>
 
-                      <p>votes: {getTotalVotes(thumbnail)}</p>
+                      <p>{t('exploreVotesLabel')}: {getTotalVotes(thumbnail)}</p>
                     </CardContent>
                   </div>
 
@@ -145,7 +148,7 @@ export default function ExplorePage() {
                       asChild
                     >
                       <Link href={`/thumbnails/${thumbnail._id}`}>
-                        {hasVoted(thumbnail) ? "View Results" : "Vote"}
+                        {hasVoted(thumbnail) ? t('exploreViewResultsButton') : t('exploreVoteButton')}
                       </Link>
                     </Button>
                   </CardFooter>
@@ -163,7 +166,7 @@ export default function ExplorePage() {
             loadMore(10);
           }}
         >
-          Load More
+          {t('exploreLoadMoreButton')}
         </Button>
       )}
     </div>

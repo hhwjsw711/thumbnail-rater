@@ -83,5 +83,21 @@ export const he: TranslationType = {
   commentsDeleteButton: "מחק",
   commentsYourCommentLabel: "התגובה שלך",
   commentsFormDescription: "השאר תגובה כדי לעזור ליוצר התוכן לשפר את עיצובי התמונות הממוזערות שלו.",
-  commentsPostCommentButton: "פרסם תגובה"
+  commentsPostCommentButton: "פרסם תגובה",
+  dashboardTitle: "מבחני התמונות הממוזערות שלך",
+  dashboardNoFoundIconAlt: "סמל לא נמצא",
+  dashboardNoTests: "אין לך מבחני תמונות ממוזערות",
+  dashboardCreateTestButton: "צור מבחן תמונה ממוזערת",
+  dashboardImageTestAlt: "מבחן תמונה",
+  dashboardVotesLabel: "הצבעות",
+  dashboardViewResultsButton: "הצג תוצאות",
+  explorePageTitle: "סקירת קהילה",
+  exploreNoThumbnailsIconAlt: "סמל לא נמצא",
+  exploreNoThumbnailsToDisplay: "אין תמונות ממוזערות להצגה",
+  exploreThumbnailImageAlt: "מבחן תמונה",
+  exploreVotesLabel: "הצבעות",
+  exploreViewResultsButton: "הצג תוצאות",
+  exploreVoteButton: "הצבע",
+  exploreLoadMoreButton: "טען עוד",
+  deleteThumbnailButtonAriaLabel: "מחק תמונה ממוזערת בשם \"{{title}}\""
 } as const;

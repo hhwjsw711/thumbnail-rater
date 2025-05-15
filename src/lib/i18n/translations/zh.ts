@@ -83,5 +83,21 @@ export const zh: TranslationType = {
   commentsDeleteButton: "删除",
   commentsYourCommentLabel: "您的评论",
   commentsFormDescription: "留下评论，帮助内容创作者改进他们的缩略图设计。",
-  commentsPostCommentButton: "发表评论"
+  commentsPostCommentButton: "发表评论",
+  dashboardTitle: "您的缩略图测试",
+  dashboardNoFoundIconAlt: "未找到图标",
+  dashboardNoTests: "您还没有缩略图测试",
+  dashboardCreateTestButton: "创建缩略图测试",
+  dashboardImageTestAlt: "图像测试",
+  dashboardVotesLabel: "票数",
+  dashboardViewResultsButton: "查看结果",
+  explorePageTitle: "社区评论",
+  exploreNoThumbnailsIconAlt: "未找到图标",
+  exploreNoThumbnailsToDisplay: "没有可显示的缩略图",
+  exploreThumbnailImageAlt: "图像测试",
+  exploreVotesLabel: "票数",
+  exploreViewResultsButton: "查看结果",
+  exploreVoteButton: "投票",
+  exploreLoadMoreButton: "加载更多",
+  deleteThumbnailButtonAriaLabel: "删除标题为 “{{title}}” 的缩略图"
 } as const;

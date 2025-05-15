@@ -83,5 +83,21 @@ export const hu: TranslationType = {
   commentsDeleteButton: "Törlés",
   commentsYourCommentLabel: "A te hozzászólásod",
   commentsFormDescription: "Hagyj hozzászólást, hogy segíts a tartalomkészítőnek javítani a bélyegkép-tervein.",
-  commentsPostCommentButton: "Hozzászólás közzététele"
+  commentsPostCommentButton: "Hozzászólás közzététele",
+  dashboardTitle: "Miniatűr Tesztjeid",
+  dashboardNoFoundIconAlt: "az ikon nem található",
+  dashboardNoTests: "Nincsenek miniatűr tesztjeid",
+  dashboardCreateTestButton: "Miniatűr Teszt Létrehozása",
+  dashboardImageTestAlt: "képteszt",
+  dashboardVotesLabel: "szavazatok",
+  dashboardViewResultsButton: "Eredmények Megtekintése",
+  explorePageTitle: "Közösségi Értékelés",
+  exploreNoThumbnailsIconAlt: "az ikon nem található",
+  exploreNoThumbnailsToDisplay: "Nincsenek megjeleníthető miniatűrök",
+  exploreThumbnailImageAlt: "képteszt",
+  exploreVotesLabel: "szavazatok",
+  exploreViewResultsButton: "Eredmények Megtekintése",
+  exploreVoteButton: "Szavazás",
+  exploreLoadMoreButton: "Továbbiak Betöltése",
+  deleteThumbnailButtonAriaLabel: "„{{title}}” című miniatűr törlése"
 } as const;

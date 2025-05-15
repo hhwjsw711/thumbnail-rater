@@ -83,5 +83,21 @@ export const ro: TranslationType = {
   commentsDeleteButton: "Șterge",
   commentsYourCommentLabel: "Comentariul tău",
   commentsFormDescription: "Lasă un comentariu pentru a ajuta creatorul de conținut să își îmbunătățească designurile miniaturilor.",
-  commentsPostCommentButton: "Postează comentariul"
+  commentsPostCommentButton: "Postează comentariul",
+  dashboardTitle: "Testele Dvs. de Miniaturi",
+  dashboardNoFoundIconAlt: "pictograma nu a fost găsită",
+  dashboardNoTests: "Nu aveți teste de miniaturi",
+  dashboardCreateTestButton: "Creați un Test de Miniaturi",
+  dashboardImageTestAlt: "test imagine",
+  dashboardVotesLabel: "voturi",
+  dashboardViewResultsButton: "Vizualizați Rezultatele",
+  explorePageTitle: "Recenzia Comunității",
+  exploreNoThumbnailsIconAlt: "pictograma nu a fost găsită",
+  exploreNoThumbnailsToDisplay: "Nicio miniatură de afișat",
+  exploreThumbnailImageAlt: "test imagine",
+  exploreVotesLabel: "voturi",
+  exploreViewResultsButton: "Vizualizați Rezultatele",
+  exploreVoteButton: "Votează",
+  exploreLoadMoreButton: "Încarcă Mai Mult",
+  deleteThumbnailButtonAriaLabel: "Șterge miniatura intitulată \"{{title}}\""
 } as const;

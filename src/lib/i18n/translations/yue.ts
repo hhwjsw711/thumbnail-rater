@@ -83,5 +83,21 @@ export const yue: TranslationType = {
   commentsDeleteButton: "刪除",
   commentsYourCommentLabel: "你嘅評論",
   commentsFormDescription: "留低你嘅意見，幫內容創作者改善佢哋嘅縮圖設計。",
-  commentsPostCommentButton: "發表評論"
+  commentsPostCommentButton: "發表評論",
+  dashboardTitle: "你嘅縮圖測試",
+  dashboardNoFoundIconAlt: "搵唔到圖示",
+  dashboardNoTests: "你冇任何縮圖測試",
+  dashboardCreateTestButton: "創建縮圖測試",
+  dashboardImageTestAlt: "圖像測試",
+  dashboardVotesLabel: "票數",
+  dashboardViewResultsButton: "查看結果",
+  explorePageTitle: "社區評論",
+  exploreNoThumbnailsIconAlt: "搵唔到圖示",
+  exploreNoThumbnailsToDisplay: "冇縮圖可以顯示",
+  exploreThumbnailImageAlt: "圖像測試",
+  exploreVotesLabel: "票數",
+  exploreViewResultsButton: "查看結果",
+  exploreVoteButton: "投票",
+  exploreLoadMoreButton: "載入更多",
+  deleteThumbnailButtonAriaLabel: "刪除標題係「{{title}}」嘅縮圖"
 } as const;

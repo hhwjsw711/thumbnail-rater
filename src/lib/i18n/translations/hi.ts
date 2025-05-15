@@ -83,5 +83,21 @@ export const hi: TranslationType = {
   commentsDeleteButton: "हटाएं",
   commentsYourCommentLabel: "आपकी टिप्पणी",
   commentsFormDescription: "सामग्री निर्माता को उनके थंबनेल डिज़ाइन को बेहतर बनाने में मदद करने के लिए एक टिप्पणी छोड़ें।",
-  commentsPostCommentButton: "टिप्पणी पोस्ट करें"
+  commentsPostCommentButton: "टिप्पणी पोस्ट करें",
+  dashboardTitle: "आपके थंबनेल टेस्ट",
+  dashboardNoFoundIconAlt: "आइकन नहीं मिला",
+  dashboardNoTests: "आपके पास कोई थंबनेल टेस्ट नहीं है",
+  dashboardCreateTestButton: "थंबनेल टेस्ट बनाएं",
+  dashboardImageTestAlt: "छवि परीक्षण",
+  dashboardVotesLabel: "वोट",
+  dashboardViewResultsButton: "परिणाम देखें",
+  explorePageTitle: "सामुदायिक समीक्षा",
+  exploreNoThumbnailsIconAlt: "आइकन नहीं मिला",
+  exploreNoThumbnailsToDisplay: "प्रदर्शित करने के लिए कोई थंबनेल नहीं",
+  exploreThumbnailImageAlt: "छवि परीक्षण",
+  exploreVotesLabel: "वोट",
+  exploreViewResultsButton: "परिणाम देखें",
+  exploreVoteButton: "वोट करें",
+  exploreLoadMoreButton: "और लोड करें",
+  deleteThumbnailButtonAriaLabel: "\"{{title}}\" शीर्षक वाले थंबनेल को हटाएं"
 } as const;

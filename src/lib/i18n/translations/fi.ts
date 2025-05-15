@@ -83,5 +83,21 @@ export const fi: TranslationType = {
   commentsDeleteButton: "Poista",
   commentsYourCommentLabel: "Kommenttisi",
   commentsFormDescription: "Jätä kommentti auttaaksesi sisällöntuottajaa parantamaan pikkukuvien suunnittelua.",
-  commentsPostCommentButton: "Lähetä kommentti"
+  commentsPostCommentButton: "Lähetä kommentti",
+  dashboardTitle: "Pikkukuviesi Testit",
+  dashboardNoFoundIconAlt: "kuvaketta ei löytynyt",
+  dashboardNoTests: "Sinulla ei ole pikkukuvatestejä",
+  dashboardCreateTestButton: "Luo Pikkukuvatesti",
+  dashboardImageTestAlt: "kuvatesti",
+  dashboardVotesLabel: "äänet",
+  dashboardViewResultsButton: "Näytä Tulokset",
+  explorePageTitle: "Yhteisön Arvostelu",
+  exploreNoThumbnailsIconAlt: "kuvaketta ei löytynyt",
+  exploreNoThumbnailsToDisplay: "Ei näytettäviä pikkukuvia",
+  exploreThumbnailImageAlt: "kuvatesti",
+  exploreVotesLabel: "äänet",
+  exploreViewResultsButton: "Näytä Tulokset",
+  exploreVoteButton: "Äänestä",
+  exploreLoadMoreButton: "Lataa Lisää",
+  deleteThumbnailButtonAriaLabel: "Poista pikkukuva nimeltä \"{{title}}\""
 } as const;

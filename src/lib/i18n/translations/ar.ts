@@ -83,5 +83,21 @@ export const ar: TranslationType = {
   commentsDeleteButton: "حذف",
   commentsYourCommentLabel: "تعليقك",
   commentsFormDescription: "اترك تعليقًا لمساعدة منشئ المحتوى على تحسين تصميمات الصور المصغرة الخاصة به.",
-  commentsPostCommentButton: "نشر التعليق"
+  commentsPostCommentButton: "نشر التعليق",
+  dashboardTitle: "اختبارات الصور المصغرة الخاصة بك",
+  dashboardNoFoundIconAlt: "لم يتم العثور على الأيقونة",
+  dashboardNoTests: "ليس لديك اختبارات صور مصغرة",
+  dashboardCreateTestButton: "إنشاء اختبار صورة مصغرة",
+  dashboardImageTestAlt: "اختبار الصورة",
+  dashboardVotesLabel: "الأصوات",
+  dashboardViewResultsButton: "عرض النتائج",
+  explorePageTitle: "مراجعة المجتمع",
+  exploreNoThumbnailsIconAlt: "لم يتم العثور على الأيقونة",
+  exploreNoThumbnailsToDisplay: "لا توجد صور مصغرة لعرضها",
+  exploreThumbnailImageAlt: "اختبار الصورة",
+  exploreVotesLabel: "الأصوات",
+  exploreViewResultsButton: "عرض النتائج",
+  exploreVoteButton: "صوّت",
+  exploreLoadMoreButton: "تحميل المزيد",
+  deleteThumbnailButtonAriaLabel: "حذف الصورة المصغرة المعنونة \"{{title}}\""
 } as const;

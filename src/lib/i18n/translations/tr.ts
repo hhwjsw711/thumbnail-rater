@@ -83,5 +83,21 @@ export const tr: TranslationType = {
   commentsDeleteButton: "Sil",
   commentsYourCommentLabel: "Yorumunuz",
   commentsFormDescription: "İçerik oluşturucunun küçük resim tasarımlarını geliştirmesine yardımcı olmak için bir yorum bırakın.",
-  commentsPostCommentButton: "Yorum Gönder"
+  commentsPostCommentButton: "Yorum Gönder",
+  dashboardTitle: "Küçük Resim Testleriniz",
+  dashboardNoFoundIconAlt: "simge bulunamadı",
+  dashboardNoTests: "Hiç küçük resim testiniz yok",
+  dashboardCreateTestButton: "Küçük Resim Testi Oluştur",
+  dashboardImageTestAlt: "görüntü testi",
+  dashboardVotesLabel: "oylar",
+  dashboardViewResultsButton: "Sonuçları Görüntüle",
+  explorePageTitle: "Topluluk İncelemesi",
+  exploreNoThumbnailsIconAlt: "simge bulunamadı",
+  exploreNoThumbnailsToDisplay: "Görüntülenecek küçük resim yok",
+  exploreThumbnailImageAlt: "görüntü testi",
+  exploreVotesLabel: "oylar",
+  exploreViewResultsButton: "Sonuçları Görüntüle",
+  exploreVoteButton: "Oy Ver",
+  exploreLoadMoreButton: "Daha Fazla Yükle",
+  deleteThumbnailButtonAriaLabel: "\"{{title}}\" başlıklı küçük resmi sil"
 } as const;

@@ -83,5 +83,21 @@ export const nl: TranslationType = {
   commentsDeleteButton: "Verwijderen",
   commentsYourCommentLabel: "Jouw reactie",
   commentsFormDescription: "Laat een reactie achter om de maker van de content te helpen zijn thumbnail-ontwerpen te verbeteren.",
-  commentsPostCommentButton: "Reactie plaatsen"
+  commentsPostCommentButton: "Reactie plaatsen",
+  dashboardTitle: "Jouw Miniatuurtesten",
+  dashboardNoFoundIconAlt: "pictogram niet gevonden",
+  dashboardNoTests: "Je hebt geen miniatuurtesten",
+  dashboardCreateTestButton: "Miniatuurtest Maken",
+  dashboardImageTestAlt: "afbeeldingstest",
+  dashboardVotesLabel: "stemmen",
+  dashboardViewResultsButton: "Resultaten Bekijken",
+  explorePageTitle: "Communitybeoordeling",
+  exploreNoThumbnailsIconAlt: "pictogram niet gevonden",
+  exploreNoThumbnailsToDisplay: "Geen miniaturen om weer te geven",
+  exploreThumbnailImageAlt: "afbeeldingstest",
+  exploreVotesLabel: "stemmen",
+  exploreViewResultsButton: "Resultaten Bekijken",
+  exploreVoteButton: "Stemmen",
+  exploreLoadMoreButton: "Meer Laden",
+  deleteThumbnailButtonAriaLabel: "Miniatuur met titel \"{{title}}\" verwijderen"
 } as const;

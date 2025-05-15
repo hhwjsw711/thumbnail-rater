@@ -83,5 +83,21 @@ export const vi: TranslationType = {
   commentsDeleteButton: "Xóa",
   commentsYourCommentLabel: "Bình luận của bạn",
   commentsFormDescription: "Để lại bình luận để giúp người tạo nội dung cải thiện thiết kế hình thu nhỏ của họ.",
-  commentsPostCommentButton: "Đăng bình luận"
+  commentsPostCommentButton: "Đăng bình luận",
+  dashboardTitle: "Bài kiểm tra Hình thu nhỏ của bạn",
+  dashboardNoFoundIconAlt: "không tìm thấy biểu tượng",
+  dashboardNoTests: "Bạn không có bài kiểm tra hình thu nhỏ nào",
+  dashboardCreateTestButton: "Tạo Bài kiểm tra Hình thu nhỏ",
+  dashboardImageTestAlt: "kiểm tra hình ảnh",
+  dashboardVotesLabel: "phiếu bầu",
+  dashboardViewResultsButton: "Xem Kết quả",
+  explorePageTitle: "Đánh giá Cộng đồng",
+  exploreNoThumbnailsIconAlt: "không tìm thấy biểu tượng",
+  exploreNoThumbnailsToDisplay: "Không có hình thu nhỏ để hiển thị",
+  exploreThumbnailImageAlt: "kiểm tra hình ảnh",
+  exploreVotesLabel: "phiếu bầu",
+  exploreViewResultsButton: "Xem Kết quả",
+  exploreVoteButton: "Bỏ phiếu",
+  exploreLoadMoreButton: "Tải thêm",
+  deleteThumbnailButtonAriaLabel: "Xóa hình thu nhỏ có tiêu đề \"{{title}}\""
 } as const;

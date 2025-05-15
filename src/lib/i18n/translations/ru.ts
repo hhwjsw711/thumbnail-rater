@@ -83,5 +83,21 @@ export const ru: TranslationType = {
   commentsDeleteButton: "Удалить",
   commentsYourCommentLabel: "Ваш комментарий",
   commentsFormDescription: "Оставьте комментарий, чтобы помочь создателю контента улучшить дизайн своих значков видео.",
-  commentsPostCommentButton: "Опубликовать комментарий"
+  commentsPostCommentButton: "Опубликовать комментарий",
+  dashboardTitle: "Ваши тесты миниатюр",
+  dashboardNoFoundIconAlt: "значок не найден",
+  dashboardNoTests: "У вас нет тестов миниатюр",
+  dashboardCreateTestButton: "Создать тест миниатюры",
+  dashboardImageTestAlt: "тест изображения",
+  dashboardVotesLabel: "голосов",
+  dashboardViewResultsButton: "Посмотреть результаты",
+  explorePageTitle: "Обзор сообщества",
+  exploreNoThumbnailsIconAlt: "значок не найден",
+  exploreNoThumbnailsToDisplay: "Нет миниатюр для отображения",
+  exploreThumbnailImageAlt: "тест изображения",
+  exploreVotesLabel: "голосов",
+  exploreViewResultsButton: "Посмотреть результаты",
+  exploreVoteButton: "Голосовать",
+  exploreLoadMoreButton: "Загрузить еще",
+  deleteThumbnailButtonAriaLabel: "Удалить миниатюру с названием «{{title}}»"
 } as const;

@@ -83,5 +83,21 @@ export const ja: TranslationType = {
   commentsDeleteButton: "削除",
   commentsYourCommentLabel: "あなたのコメント",
   commentsFormDescription: "コンテンツ作成者がサムネイルデザインを改善できるよう、コメントを残してください。",
-  commentsPostCommentButton: "コメントを投稿"
+  commentsPostCommentButton: "コメントを投稿",
+  dashboardTitle: "あなたのサムネイルテスト",
+  dashboardNoFoundIconAlt: "アイコンが見つかりません",
+  dashboardNoTests: "サムネイルテストがありません",
+  dashboardCreateTestButton: "サムネイルテストを作成",
+  dashboardImageTestAlt: "画像テスト",
+  dashboardVotesLabel: "投票数",
+  dashboardViewResultsButton: "結果を見る",
+  explorePageTitle: "コミュニティレビュー",
+  exploreNoThumbnailsIconAlt: "アイコンが見つかりません",
+  exploreNoThumbnailsToDisplay: "表示するサムネイルがありません",
+  exploreThumbnailImageAlt: "画像テスト",
+  exploreVotesLabel: "投票数",
+  exploreViewResultsButton: "結果を見る",
+  exploreVoteButton: "投票する",
+  exploreLoadMoreButton: "もっと読み込む",
+  deleteThumbnailButtonAriaLabel: "「{{title}}」というタイトルのサムネイルを削除"
 } as const;

@@ -83,5 +83,21 @@ export const en: TranslationType = {
   commentsDeleteButton: "Delete",
   commentsYourCommentLabel: "Your Comment",
   commentsFormDescription: "Leave a comment to help the content creator improve their thumbnail designs.",
-  commentsPostCommentButton: "Post Comment"
+  commentsPostCommentButton: "Post Comment",
+  dashboardTitle: "Your Thumbnail Tests",
+  dashboardNoFoundIconAlt: "no found icon",
+  dashboardNoTests: "You have no thumbnail tests",
+  dashboardCreateTestButton: "Create a Thumbnail Test",
+  dashboardImageTestAlt: "image test",
+  dashboardVotesLabel: "votes",
+  dashboardViewResultsButton: "View Results",
+  explorePageTitle: "Community Review",
+  exploreNoThumbnailsIconAlt: "no found icon",
+  exploreNoThumbnailsToDisplay: "No thumbnails to display",
+  exploreThumbnailImageAlt: "image test",
+  exploreVotesLabel: "votes",
+  exploreViewResultsButton: "View Results",
+  exploreVoteButton: "Vote",
+  exploreLoadMoreButton: "Load More",
+  deleteThumbnailButtonAriaLabel: "Delete thumbnail titled {{title}}"
 } as const;

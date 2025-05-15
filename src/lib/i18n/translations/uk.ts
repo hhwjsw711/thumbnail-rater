@@ -83,5 +83,21 @@ export const uk: TranslationType = {
   commentsDeleteButton: "Видалити",
   commentsYourCommentLabel: "Ваш коментар",
   commentsFormDescription: "Залиште коментар, щоб допомогти автору контенту покращити дизайн своїх мініатюр.",
-  commentsPostCommentButton: "Опублікувати коментар"
+  commentsPostCommentButton: "Опублікувати коментар",
+  dashboardTitle: "Ваші тести мініатюр",
+  dashboardNoFoundIconAlt: "піктограму не знайдено",
+  dashboardNoTests: "У вас немає тестів мініатюр",
+  dashboardCreateTestButton: "Створити тест мініатюри",
+  dashboardImageTestAlt: "тест зображення",
+  dashboardVotesLabel: "голосів",
+  dashboardViewResultsButton: "Переглянути результати",
+  explorePageTitle: "Огляд спільноти",
+  exploreNoThumbnailsIconAlt: "піктограму не знайдено",
+  exploreNoThumbnailsToDisplay: "Немає мініатюр для відображення",
+  exploreThumbnailImageAlt: "тест зображення",
+  exploreVotesLabel: "голосів",
+  exploreViewResultsButton: "Переглянути результати",
+  exploreVoteButton: "Голосувати",
+  exploreLoadMoreButton: "Завантажити ще",
+  deleteThumbnailButtonAriaLabel: "Видалити мініатюру з назвою «{{title}}»"
 } as const;

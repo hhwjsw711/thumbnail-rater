@@ -83,5 +83,21 @@ export const ko: TranslationType = {
   commentsDeleteButton: "삭제",
   commentsYourCommentLabel: "댓글",
   commentsFormDescription: "콘텐츠 제작자가 썸네일 디자인을 개선하는 데 도움이 되도록 댓글을 남겨주세요.",
-  commentsPostCommentButton: "댓글 게시"
+  commentsPostCommentButton: "댓글 게시",
+  dashboardTitle: "내 썸네일 테스트",
+  dashboardNoFoundIconAlt: "아이콘을 찾을 수 없음",
+  dashboardNoTests: "썸네일 테스트가 없습니다",
+  dashboardCreateTestButton: "썸네일 테스트 만들기",
+  dashboardImageTestAlt: "이미지 테스트",
+  dashboardVotesLabel: "투표 수",
+  dashboardViewResultsButton: "결과 보기",
+  explorePageTitle: "커뮤니티 리뷰",
+  exploreNoThumbnailsIconAlt: "아이콘을 찾을 수 없음",
+  exploreNoThumbnailsToDisplay: "표시할 썸네일이 없습니다",
+  exploreThumbnailImageAlt: "이미지 테스트",
+  exploreVotesLabel: "투표 수",
+  exploreViewResultsButton: "결과 보기",
+  exploreVoteButton: "투표하기",
+  exploreLoadMoreButton: "더 보기",
+  deleteThumbnailButtonAriaLabel: "제목이 '{{title}}'인 썸네일 삭제"
 } as const;

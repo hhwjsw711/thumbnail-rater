@@ -83,5 +83,21 @@ export const id: TranslationType = {
   commentsDeleteButton: "Hapus",
   commentsYourCommentLabel: "Komentar Anda",
   commentsFormDescription: "Tinggalkan komentar untuk membantu pembuat konten meningkatkan desain thumbnail mereka.",
-  commentsPostCommentButton: "Kirim Komentar"
+  commentsPostCommentButton: "Kirim Komentar",
+  dashboardTitle: "Tes Gambar Mini Anda",
+  dashboardNoFoundIconAlt: "ikon tidak ditemukan",
+  dashboardNoTests: "Anda tidak memiliki tes gambar mini",
+  dashboardCreateTestButton: "Buat Tes Gambar Mini",
+  dashboardImageTestAlt: "tes gambar",
+  dashboardVotesLabel: "suara",
+  dashboardViewResultsButton: "Lihat Hasil",
+  explorePageTitle: "Ulasan Komunitas",
+  exploreNoThumbnailsIconAlt: "ikon tidak ditemukan",
+  exploreNoThumbnailsToDisplay: "Tidak ada gambar mini untuk ditampilkan",
+  exploreThumbnailImageAlt: "tes gambar",
+  exploreVotesLabel: "suara",
+  exploreViewResultsButton: "Lihat Hasil",
+  exploreVoteButton: "Pilih",
+  exploreLoadMoreButton: "Muat Lebih Banyak",
+  deleteThumbnailButtonAriaLabel: "Hapus gambar mini berjudul \"{{title}}\""
 } as const;

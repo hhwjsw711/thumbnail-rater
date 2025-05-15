@@ -83,5 +83,21 @@ export const no: TranslationType = {
   commentsDeleteButton: "Slett",
   commentsYourCommentLabel: "Din kommentar",
   commentsFormDescription: "Legg igjen en kommentar for å hjelpe innholdsskaperen med å forbedre miniatyrbildedesignene sine.",
-  commentsPostCommentButton: "Publiser kommentar"
+  commentsPostCommentButton: "Publiser kommentar",
+  dashboardTitle: "Dine Miniatyrbilder Tester",
+  dashboardNoFoundIconAlt: "ikon ikke funnet",
+  dashboardNoTests: "Du har ingen miniatyrbildetester",
+  dashboardCreateTestButton: "Opprett Miniatyrbildetest",
+  dashboardImageTestAlt: "bildetest",
+  dashboardVotesLabel: "stemmer",
+  dashboardViewResultsButton: "Se Resultater",
+  explorePageTitle: "Fellesskapsomtale",
+  exploreNoThumbnailsIconAlt: "ikon ikke funnet",
+  exploreNoThumbnailsToDisplay: "Ingen miniatyrbilder å vise",
+  exploreThumbnailImageAlt: "bildetest",
+  exploreVotesLabel: "stemmer",
+  exploreViewResultsButton: "Se Resultater",
+  exploreVoteButton: "Stem",
+  exploreLoadMoreButton: "Last Mer",
+  deleteThumbnailButtonAriaLabel: "Slett miniatyrbilde med tittelen \"{{title}}\""
 } as const;

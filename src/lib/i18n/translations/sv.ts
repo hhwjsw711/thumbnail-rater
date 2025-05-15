@@ -83,5 +83,21 @@ export const sv: TranslationType = {
   commentsDeleteButton: "Ta bort",
   commentsYourCommentLabel: "Din kommentar",
   commentsFormDescription: "Lämna en kommentar för att hjälpa innehållsskaparen att förbättra sina miniatyrdesigner.",
-  commentsPostCommentButton: "Publicera kommentar"
+  commentsPostCommentButton: "Publicera kommentar",
+  dashboardTitle: "Dina Miniatyr Tester",
+  dashboardNoFoundIconAlt: "ikonen hittades inte",
+  dashboardNoTests: "Du har inga miniatyrtester",
+  dashboardCreateTestButton: "Skapa Miniatyrtest",
+  dashboardImageTestAlt: "bildtest",
+  dashboardVotesLabel: "röster",
+  dashboardViewResultsButton: "Visa Resultat",
+  explorePageTitle: "Communitygranskning",
+  exploreNoThumbnailsIconAlt: "ikonen hittades inte",
+  exploreNoThumbnailsToDisplay: "Inga miniatyrer att visa",
+  exploreThumbnailImageAlt: "bildtest",
+  exploreVotesLabel: "röster",
+  exploreViewResultsButton: "Visa Resultat",
+  exploreVoteButton: "Rösta",
+  exploreLoadMoreButton: "Ladda Mer",
+  deleteThumbnailButtonAriaLabel: "Ta bort miniatyr med titeln \"{{title}}\""
 } as const;

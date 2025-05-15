@@ -83,5 +83,21 @@ export const da: TranslationType = {
   commentsDeleteButton: "Slet",
   commentsYourCommentLabel: "Din kommentar",
   commentsFormDescription: "Efterlad en kommentar for at hjælpe indholdsskaberen med at forbedre deres thumbnail-designs.",
-  commentsPostCommentButton: "Send kommentar"
+  commentsPostCommentButton: "Send kommentar",
+  dashboardTitle: "Dine Miniaturetests",
+  dashboardNoFoundIconAlt: "ikon ikke fundet",
+  dashboardNoTests: "Du har ingen miniaturetests",
+  dashboardCreateTestButton: "Opret Miniaturetest",
+  dashboardImageTestAlt: "billedtest",
+  dashboardVotesLabel: "stemmer",
+  dashboardViewResultsButton: "Se Resultater",
+  explorePageTitle: "Fællesskabsanmeldelse",
+  exploreNoThumbnailsIconAlt: "ikon ikke fundet",
+  exploreNoThumbnailsToDisplay: "Ingen miniaturer at vise",
+  exploreThumbnailImageAlt: "billedtest",
+  exploreVotesLabel: "stemmer",
+  exploreViewResultsButton: "Se Resultater",
+  exploreVoteButton: "Stem",
+  exploreLoadMoreButton: "Indlæs Mere",
+  deleteThumbnailButtonAriaLabel: "Slet miniature med titlen \"{{title}}\""
 } as const;

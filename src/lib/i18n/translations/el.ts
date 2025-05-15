@@ -83,5 +83,21 @@ export const el: TranslationType = {
   commentsDeleteButton: "Διαγραφή",
   commentsYourCommentLabel: "Το σχόλιό σας",
   commentsFormDescription: "Αφήστε ένα σχόλιο για να βοηθήσετε τον δημιουργό περιεχομένου να βελτιώσει τα σχέδια των μικρογραφιών του.",
-  commentsPostCommentButton: "Δημοσίευση σχολίου"
+  commentsPostCommentButton: "Δημοσίευση σχολίου",
+  dashboardTitle: "Οι Δοκιμές Μικρογραφιών σας",
+  dashboardNoFoundIconAlt: "το εικονίδιο δεν βρέθηκε",
+  dashboardNoTests: "Δεν έχετε δοκιμές μικρογραφιών",
+  dashboardCreateTestButton: "Δημιουργία Δοκιμής Μικρογραφίας",
+  dashboardImageTestAlt: "δοκιμή εικόνας",
+  dashboardVotesLabel: "ψήφοι",
+  dashboardViewResultsButton: "Προβολή Αποτελεσμάτων",
+  explorePageTitle: "Αξιολόγηση Κοινότητας",
+  exploreNoThumbnailsIconAlt: "το εικονίδιο δεν βρέθηκε",
+  exploreNoThumbnailsToDisplay: "Δεν υπάρχουν μικρογραφίες για εμφάνιση",
+  exploreThumbnailImageAlt: "δοκιμή εικόνας",
+  exploreVotesLabel: "ψήφοι",
+  exploreViewResultsButton: "Προβολή Αποτελεσμάτων",
+  exploreVoteButton: "Ψηφίστε",
+  exploreLoadMoreButton: "Φόρτωση Περισσότερων",
+  deleteThumbnailButtonAriaLabel: "Διαγραφή μικρογραφίας με τίτλο «{{title}}»"
 } as const;

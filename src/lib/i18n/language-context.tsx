@@ -122,14 +122,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    console.log(`[LanguageProvider] Language changed to: ${language}`);
     const selectedLocaleObject = appLangToDateFnsObject[language];
 
     if (selectedLocaleObject) {
       setDateFnsLocale(selectedLocaleObject);
-      console.log(`[LanguageProvider] Successfully set date-fns locale for: ${language}`);
     } else {
-      console.warn(`[LanguageProvider] No date-fns locale object found for app language: ${language}. Falling back to en-US.`);
       setDateFnsLocale(enUSLocale);
     }
   }, [language]);
@@ -139,8 +136,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (translations[lang]) {
       setLanguage(lang);
       localStorage.setItem('preferred-language', lang);
-    } else {
-      console.warn(`[LanguageProvider] Attempted to set unsupported language: ${lang}`);
     }
   };
 

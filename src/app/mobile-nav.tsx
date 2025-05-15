@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useClerk } from "@clerk/nextjs";
 import { motion, useCycle } from "framer-motion";
 import { MenuIcon } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 const sidebar = {
   open: {
@@ -36,6 +37,7 @@ export default function MobileNav({
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   const { signOut } = useClerk();
+  const { t } = useLanguage();
 
   return (
     <motion.nav
@@ -63,7 +65,7 @@ export default function MobileNav({
               onClick={() => toggleOpen()}
               className="flex w-full font-semibold capitalize"
             >
-              Dashboard
+              {t('mobileNavDashboard')}
             </Link>
           </MenuItem>
           <MenuItem className="my-3 h-px w-full bg-gray-300" />
@@ -73,7 +75,7 @@ export default function MobileNav({
               onClick={() => toggleOpen()}
               className="flex w-full font-semibold capitalize"
             >
-              Create
+              {t('mobileNavCreate')}
             </Link>
           </MenuItem>
           <MenuItem className="my-3 h-px w-full bg-gray-300" />
@@ -83,7 +85,7 @@ export default function MobileNav({
               onClick={() => toggleOpen()}
               className="flex w-full font-semibold capitalize"
             >
-              Explore
+              {t('mobileNavExplore')}
             </Link>
           </MenuItem>
           <MenuItem className="my-3 h-px w-full bg-gray-300" />
@@ -94,7 +96,7 @@ export default function MobileNav({
               onClick={() => toggleOpen()}
               className="flex w-full font-semibold capitalize"
             >
-              Following
+              {t('mobileNavFollowing')}
             </Link>
           </MenuItem>
           <MenuItem className="my-3 h-px w-full bg-gray-300" />
@@ -105,7 +107,7 @@ export default function MobileNav({
               onClick={() => toggleOpen()}
               className="flex w-full font-semibold capitalize"
             >
-              Account
+              {t('mobileNavAccount')}
             </Link>
           </MenuItem>
           <MenuItem className="my-3 h-px w-full bg-gray-300" />
@@ -119,7 +121,7 @@ export default function MobileNav({
               }}
               className="flex w-full font-semibold capitalize"
             >
-              Sign Out
+              {t('mobileNavSignOut')}
             </Link>
           </MenuItem>
         </div>
@@ -146,6 +148,7 @@ export const MenuToggle = ({ toggle }: { toggle: any }) => (
   <button
     onClick={toggle}
     className="sm:hidden pointer-events-auto flex z-50 dark:text-white text-black mr-3"
+    aria-label="Toggle menu"
   >
     <MenuIcon />
   </button>

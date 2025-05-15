@@ -1,7 +1,6 @@
 "use client";
-"use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -21,14 +20,17 @@ import { z } from "zod";
 import { api } from "../../../convex/_generated/api";
 import { useToast } from "@/components/ui/use-toast";
 import { useSession } from "@/lib/utils";
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Must include an email.",
-  }),
-});
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function AccountPage() {
+  const { t } = useLanguage();
+
+  const formSchema = useMemo(() => z.object({
+    name: z.string().min(2, {
+      message: t("accountDisplayNameErrorMessage"),
+    }),
+  }), [t]);
+
   const { isAuthenticated, isLoading: isAuthLoading } = useSession();
   const user = useQuery(
     api.users.getMyUser,
@@ -40,7 +42,7 @@ export default function AccountPage() {
       name: "",
     },
   });
-  const isLoading = form.formState.isSubmitting;
+  const isSubmitting = form.formState.isSubmitting;
 
   const updateMyUser = useMutation(api.users.updateMyUser);
 
@@ -53,41 +55,39 @@ export default function AccountPage() {
 
   return (
     <div className="mb-12">
-      <h2 className="text-4xl font-bold mb-8">Account Settings</h2>
+      <h2 className="text-4xl font-bold mb-8">{t('accountPageTitle')}</h2>
 
       <Form {...form}>
-        <form
+      <form
           className="max-w-sm"
           onSubmit={form.handleSubmit(async (values) => {
-            await updateMyUser({
-              name: values.name,
-            })
-              .then(() => {
-                toast({
-                  title: "Update Successful",
-                  description: "Your display name was updated",
-                  variant: "default",
-                });
-              })
-              .catch((error) => {
-                toast({
-                  title: "Something went wrong",
-                  description: "Could not update your display name",
-                  variant: "destructive",
-                });
+            try {
+              await updateMyUser({
+                name: values.name,
               });
-            form.reset();
+              toast({
+                title: t('accountUpdateSuccessTitle'),
+                description: t('accountUpdateSuccessDescription'),
+                variant: "default",
+              });
+            } catch (error) {
+              toast({
+                title: t('accountUpdateErrorTitle'),
+                description: t('accountUpdateErrorDescription'),
+                variant: "destructive",
+              });
+            }
           })}
         >
           <FormField
             name="name"
             control={form.control}
-            render={({ field }: { field: any }) => (
+            render={({ field }) => (
               <FormItem className="col-span-2 md:col-span-1">
                 <FormLabel className="flex flex-row space-x-1 items-center">
-                  Display Name
+                  {t('accountDisplayNameLabel')}
                 </FormLabel>
-                <div className="flex items-center gap-4 mt-6 max-w-lg">
+                <div className="flex items-center gap-4 mt-2 max-w-lg">
                   <FormControl>
                     <Input {...field} type="text" required />
                   </FormControl>
@@ -98,14 +98,14 @@ export default function AccountPage() {
           />
 
           <div className="flex justify-end">
-            <Button className="w-fit mt-4" type="submit" disabled={isLoading}>
-              {isLoading ? (
+            <Button className="w-fit mt-4" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Saving...
+                  {t('accountSavingButton')}
                 </>
               ) : (
-                "Save"
+                t('accountSaveButton')
               )}
             </Button>
           </div>

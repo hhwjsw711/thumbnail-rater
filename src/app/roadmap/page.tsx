@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { zhCN } from "date-fns/locale";
 import { unstable_noStore } from "next/cache";
 import Markdown from "react-markdown";
 
@@ -21,12 +22,12 @@ export default async function RoadmapPage() {
     <div className="container max-w-5xl mx-auto">
       <div className="flex flex-row justify-between mb-8">
         <h1 className="my-12 text-[28px] leading-[34px] tracking-[-0.416px] text-neutral-12 font-bold">
-          Your Roadmap
+          产品路线图
         </h1>
       </div>
 
       {roadmapItems.length === 0 && (
-        <div className="text-lg font-semibold">No roadmap items found</div>
+        <div className="text-lg font-semibold">未找到产品路线图</div>
       )}
 
       <ul className="flex flex-col">
@@ -37,8 +38,8 @@ export default async function RoadmapPage() {
           >
             <div className="flex w-full pb-4 sm:w-[200px] sm:pb-0">
               <p className="sans text-sm leading-[1.6] text-slate-11 font-normal">
-                <time className="sticky top-24 text-xl" dateTime="2024-03-06">
-                  {format(roadmapItem.releaseDate, "PP")}
+                <time className="sticky top-24 text-lg" dateTime="2024-03-06">
+                  {format(new Date(roadmapItem.releaseDate), "yyyy年MM月dd日", { locale: zhCN })}
                 </time>
               </p>
             </div>

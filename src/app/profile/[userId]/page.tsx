@@ -22,7 +22,7 @@ import { useLanguage } from "@/lib/i18n/language-context";
 
 function UserThumbnails() {
   const params = useParams<{ userId: string }>();
-  const { t } = useLanguage();
+  const { t, dateFnsLocale } = useLanguage();
   const thumbnails = useQuery(api.thumbnails.getThumbnailsForUser, {
     userId: params.userId,
   });
@@ -80,6 +80,7 @@ function UserThumbnails() {
                     new Date(),
                     {
                       addSuffix: true,
+                      locale: dateFnsLocale,
                     }
                   )}
                 </p>

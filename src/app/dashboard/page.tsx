@@ -18,7 +18,7 @@ import { getTotalVotes } from "@/util/getTotalVotes";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function DashboardPage() {
-  const { t } = useLanguage();
+  const { t, dateFnsLocale } = useLanguage();
   const { isAuthenticated } = useSession();
   const thumbnails = useQuery(
     api.thumbnails.getMyThumbnails,
@@ -82,6 +82,7 @@ export default function DashboardPage() {
                     new Date(),
                     {
                       addSuffix: true,
+                      locale: dateFnsLocale,
                     }
                   )}
                 </p>

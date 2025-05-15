@@ -13,7 +13,7 @@ import {
   VoteIcon,
 } from "lucide-react";
 import { ReactNode, useState } from "react";
-import { timeFrom } from "@/util/time-from";
+import { formatDistance } from "date-fns";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
@@ -42,7 +42,7 @@ function Notification({
   description: string;
   icon: ReactNode;
 }) {
-  const { t } = useLanguage();
+  const { t, dateFnsLocale } = useLanguage();
   const markAsRead = useMutation(api.notification.markAsRead);
   const router = useRouter();
 
@@ -55,7 +55,12 @@ function Notification({
 
       <div>
         <div className="font-bold mb-2">{title}</div>
-        <div className="mb-2">{timeFrom(notification._creationTime)}</div>
+        <div className="mb-2">
+          {formatDistance(new Date(notification._creationTime), new Date(), {
+            addSuffix: true,
+            locale: dateFnsLocale,
+          })}
+        </div>
         <div>
           <Link href={`/profile/${notification.from}`}>
             {notification.profile.name}{" "}

@@ -32,7 +32,7 @@ const formSchema = z.object({
 
 export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
   const { isAuthenticated } = useSession();
-  const { t } = useLanguage();
+  const { t, dateFnsLocale } = useLanguage();
   const addComment = useMutation(api.thumbnails.addComment);
   const adminDeleteComment = useMutation(api.thumbnails.adminDeleteComment);
   const comments = useQuery(api.thumbnails.getComments, {
@@ -137,6 +137,7 @@ export function Comments({ thumbnail }: { thumbnail: Doc<"thumbnails"> }) {
                             new Date(),
                             {
                               addSuffix: true,
+                              locale: dateFnsLocale,
                             }
                           )}
                         </div>

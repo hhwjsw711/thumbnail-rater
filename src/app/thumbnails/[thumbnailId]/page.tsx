@@ -49,7 +49,7 @@ function ThumbnailTestImage({
   imageId: Id<"_storage">;
 }) {
   const voteOnThumbnail = useMutation(api.thumbnails.voteOnThumbnail);
-  const { t } = useLanguage();
+  const { t, dateFnsLocale } = useLanguage();
 
   return (
     <div className="flex flex-col gap-4 border p-4 bg-white dark:bg-gray-950">
@@ -81,6 +81,7 @@ function ThumbnailTestImage({
             <DotIcon />
             {formatDistance(new Date(thumbnail._creationTime), new Date(), {
               addSuffix: true,
+              locale: dateFnsLocale,
             })}
           </div>
         </div>

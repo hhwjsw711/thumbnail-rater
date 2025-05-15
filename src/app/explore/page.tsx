@@ -26,7 +26,7 @@ import { getTotalVotes } from "@/util/getTotalVotes";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function ExplorePage() {
-  const { t } = useLanguage();
+  const { t, dateFnsLocale } = useLanguage();
   const {
     results: thumbnails,
     status,
@@ -130,6 +130,7 @@ export default function ExplorePage() {
                               new Date(),
                               {
                                 addSuffix: true,
+                                locale: dateFnsLocale,
                               }
                             )}
                           </p>

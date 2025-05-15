@@ -18,9 +18,11 @@ import { useParams } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Id } from "../../../../convex/_generated/dataModel";
 import { getTotalVotes } from "@/util/getTotalVotes";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 function UserThumbnails() {
   const params = useParams<{ userId: string }>();
+  const { t } = useLanguage();
   const thumbnails = useQuery(api.thumbnails.getThumbnailsForUser, {
     userId: params.userId,
   });
@@ -46,10 +48,10 @@ function UserThumbnails() {
             width="400"
             height="400"
           />
-          <div className="text-2xl font-bold">You have no thumbnail tests</div>
+          <div className="text-2xl font-bold">{t('profileNoThumbnailTests')}</div>
 
           <Button asChild>
-            <Link href="/create">Create a Thumbnail Test</Link>
+            <Link href="/create">{t('profileCreateThumbnailTestButton')}</Link>
           </Button>
         </div>
       )}
@@ -62,7 +64,7 @@ function UserThumbnails() {
                 <div className="relative aspect-[1280/720]">
                   {thumbnail.urls[0] && (
                     <Image
-                      alt="image test"
+                      alt={t('profileImageTestAlt')}
                       className="object-cover"
                       src={thumbnail.urls[0]}
                       layout="fill"
@@ -81,12 +83,12 @@ function UserThumbnails() {
                     }
                   )}
                 </p>
-                <p>votes: {getTotalVotes(thumbnail)}</p>
+                <p>{t('profileVotesLabel')}: {getTotalVotes(thumbnail)}</p>
               </CardContent>
               <CardFooter>
                 <Button className="w-full" asChild>
                   <Link href={`/thumbnails/${thumbnail._id}`}>
-                    View Results
+                  {t('profileViewResultsButton')}
                   </Link>
                 </Button>
               </CardFooter>
@@ -101,6 +103,7 @@ function UserThumbnails() {
 export default function ProfilePage() {
   const params = useParams<{ userId: Id<"users"> }>();
   const { isAuthenticated } = useSession();
+  const { t } = useLanguage();
 
   const profile = useQuery(api.users.getProfile, {
     userId: params.userId,
@@ -135,7 +138,7 @@ export default function ProfilePage() {
             }}
             variant={"destructive"}
           >
-            Unfollow
+            {t('profileUnfollowButton')}
           </Button>
         ) : (
           <Button
@@ -145,13 +148,13 @@ export default function ProfilePage() {
               });
             }}
           >
-            Follow
+            {t('profileFollowButton')}
           </Button>
         )}
       </div>
 
       <div className="col-span-2">
-        <h1 className="text-4xl font-bold mt-12 md:mt-4">Thumbnails</h1>
+        <h1 className="text-4xl font-bold mt-12 md:mt-4">{t('profileThumbnailsTitle')}</h1>
 
         <UserThumbnails />
       </div>

@@ -17,6 +17,7 @@ import { timeFrom } from "@/util/time-from";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 function SkeletonNotifications() {
   return (
@@ -41,6 +42,7 @@ function Notification({
   description: string;
   icon: ReactNode;
 }) {
+  const { t } = useLanguage();
   const markAsRead = useMutation(api.notification.markAsRead);
   const router = useRouter();
 
@@ -74,7 +76,7 @@ function Notification({
           router.push(`/thumbnails/${notification.thumbnailId}`);
         }}
       >
-        {notification.isRead ? "View" : "Read"}
+        {notification.isRead ? t('notificationsButtonView') : t('notificationsButtonRead')}
       </Button>
     </div>
   );
@@ -82,6 +84,7 @@ function Notification({
 
 export default function NotificationsPage() {
   const { isAuthenticated } = useSession();
+  const { t } = useLanguage();
 
   const [filter, setFilter] = useState<"vote" | "thumbnail" | "comment">(
     "vote"
@@ -98,7 +101,7 @@ export default function NotificationsPage() {
 
   return (
     <div className="">
-      <h1 className="text-center text-4xl font-bold mb-12">Notifications</h1>
+      <h1 className="text-center text-4xl font-bold mb-12">{t('notificationsPageTitle')}</h1>
 
       <div className="flex flex-col gap-8 max-w-xl mx-auto">
         <Tabs
@@ -110,13 +113,13 @@ export default function NotificationsPage() {
         >
           <TabsList>
             <TabsTrigger value="vote" className="flex gap-2">
-              <VoteIcon /> Votes
+              <VoteIcon /> {t('notificationsTabVotes')}
             </TabsTrigger>
             <TabsTrigger value="thumbnail" className="flex gap-2">
-              <PictureInPictureIcon /> Thumbnails
+              <PictureInPictureIcon /> {t('notificationsTabThumbnails')}
             </TabsTrigger>
             <TabsTrigger value="comment" className="flex gap-2">
-              <MessageSquareIcon /> Comments
+              <MessageSquareIcon /> {t('notificationsTabComments')}
             </TabsTrigger>
           </TabsList>
         </Tabs>
@@ -126,9 +129,9 @@ export default function NotificationsPage() {
             return (
               <Notification
                 key={notification._id}
-                description=" uploaded a new thumbnail test!"
+                description={t('notificationsNewThumbnailDescription')}
                 icon={<PictureInPictureIcon className="h-14 w-14" />}
-                title="New Thumbnail"
+                title={t('notificationsNewThumbnailTitle')}
                 notification={notification}
               />
             );
@@ -136,9 +139,9 @@ export default function NotificationsPage() {
             return (
               <Notification
                 key={notification._id}
-                description=" left a comment on your thumbnail."
+                description={t('notificationsNewCommentDescription')}
                 icon={<SpeechIcon className="h-14 w-14" />}
-                title="New Comment"
+                title={t('notificationsNewCommentTitle')}
                 notification={notification}
               />
             );
@@ -146,9 +149,9 @@ export default function NotificationsPage() {
             return (
               <Notification
                 key={notification._id}
-                description=" voted for one of your thumbnail images."
-                icon={<PictureInPictureIcon className="h-14 w-14" />}
-                title="New Vote"
+                description={t('notificationsNewVoteDescription')}
+                icon={<VoteIcon className="h-14 w-14" />}
+                title={t('notificationsNewVoteTitle')}
                 notification={notification}
               />
             );
@@ -172,7 +175,7 @@ export default function NotificationsPage() {
               width="400"
               height="400"
             />
-            <div className="text-2xl font-bold">You have no notifications</div>
+            <div className="text-2xl font-bold">{t('notificationsNoNotifications')}</div>
           </div>
         )}
       </div>

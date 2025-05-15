@@ -148,7 +148,7 @@ export function FeedbackForm({
           name="name"
           control={control}
           render={({ field }) => (
-            <Input {...field} type="name" id="name" placeholder={t('namePlaceholder')}  />
+            <Input {...field} type="name" id="name" placeholder={t('namePlaceholder')} />
           )}
         />
         {errors.name && typeof errors.name.message === "string" && (
@@ -175,7 +175,7 @@ export function FeedbackForm({
         )}
       </div>
       <div className="flex justify-end">
-        <Button type="submit" disabled={isSubmitting}>
+        <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
